@@ -1072,3 +1072,172 @@ Processing by UserController#new as HTML
 Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 6069)
 
 
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:03:33 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 4260)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 6505)
+Completed 200 OK in 23ms (Views: 12.8ms | ActiveRecord: 3.4ms | Allocations: 12959)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:04:48 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 5209)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 7454)
+Completed 200 OK in 22ms (Views: 10.5ms | ActiveRecord: 3.5ms | Allocations: 13614)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:06:19 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 5267)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 7511)
+Completed 200 OK in 27ms (Views: 14.0ms | ActiveRecord: 3.2ms | Allocations: 13671)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:06:51 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 4964)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 7210)
+Completed 200 OK in 28ms (Views: 14.6ms | ActiveRecord: 3.7ms | Allocations: 13365)
+
+
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:19:34 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:21:01 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 16.2ms | Allocations: 6787)
+  Rendered layout layouts/application.html.erb (Duration: 99.9ms | Allocations: 56173)
+Completed 200 OK in 176ms (Views: 104.3ms | ActiveRecord: 4.5ms | Allocations: 83616)
+
+
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:21:03 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:22:01 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:23:16 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 5153)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 7394)
+Completed 200 OK in 22ms (Views: 9.0ms | ActiveRecord: 2.6ms | Allocations: 16119)
+
+
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:23:18 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:24:26 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:24:30 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2403)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2799)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.1ms | Allocations: 9403)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007fb3da344578>):
+     8:         <div class="col-md-6">
+     9:           <%= form.text_field :username, class: 'form-control' %>
+    10:         </div>
+    11:         <% user.errors.full_messages_for(:username).each do |message| %>
+    12:           <div class='text-danger'><%= message %></div>
+    13:         <% end %>
+    14:       </div>
+  
+app/views/user/new.html.erb:11
+app/views/user/new.html.erb:4
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:25:07 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 5291)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 7543)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 2.9ms | Allocations: 13870)
+
+
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:25:08 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:25:13 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:26:04 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-14 00:26:15 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 4139)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 6377)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 6931)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-14 00:26:16 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4129)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 6338)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 6907)
+
+
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:26:17 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-14 00:26:47 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 5302)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 7547)
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 2.1ms | Allocations: 13872)
+
+
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:26:48 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:26:54 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-14 00:27:13 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started POST "/" for 127.0.0.1 at 2024-01-14 00:27:16 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
