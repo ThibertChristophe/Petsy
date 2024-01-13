@@ -328,3 +328,747 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 4873)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('2660724183889824570', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (10.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2024-01-13 22:16:51.335068', '2024-01-13 22:16:51.335075')[0m
+Migrating to CreateUsers (20240113221553)
+  [1m[35m (46.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `username` varchar(255), `email` varchar(255), `confirm` tinyint(1) DEFAULT FALSE, `confirmation_token` varchar(255), `password_digest` varchar(255), `firstname` varchar(255), `lastname` varchar(255), `avatar` tinyint(1) DEFAULT FALSE, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240113221553')[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('2660724183889824570')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:24:13 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1585)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1679)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 3.8ms | Allocations: 24656)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for an instance of #<Class:0x00007ff01a996058>):
+    1: <div class="panel panel-default">
+    2:   <div class="panel-heading">S'inscrire</div>
+    3:   <div class="panel-body">
+    4:     <%= form_for @user, class: 'form-horizontal' do |form| %>
+    5:       <%= form.text_field :name %>
+    6:     <% end %>
+    7:   </div>
+  
+app/views/user/new.html.erb:4
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:27:07 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1150)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1242)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 4.0ms | Allocations: 7069)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for an instance of #<Class:0x00007ff0191af700>):
+    1: <div class="panel panel-default">
+    2:   <div class="panel-heading">S'inscrire</div>
+    3:   <div class="panel-body">
+    4:     <%= form_for @user, class: 'form-horizontal' do |form| %>
+    5:       <%= form.text_field :username %>
+    6:     <% end %>
+    7:   </div>
+  
+app/views/user/new.html.erb:4
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:28:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1683)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1809)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 3.5ms | Allocations: 25943)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for an instance of #<Class:0x00007f406d0ad660>):
+    1: <div class="panel panel-default">
+    2:   <div class="panel-heading">S'inscrire</div>
+    3:   <div class="panel-body">
+    4:     <%= form_for @user, class: 'form-horizontal' do |form| %>
+    5:       <%= form.text_field :username %>
+    6:     <% end %>
+    7:   </div>
+  
+app/views/user/new.html.erb:4
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:29:32 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/chris/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/chris/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/railties-7.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 271)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 1087)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:29:40 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1149)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1241)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.3ms | Allocations: 7014)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for an instance of #<Class:0x00007f406d2b4c60>):
+    1: <div class="panel panel-default">
+    2:   <div class="panel-heading">S'inscrire</div>
+    3:   <div class="panel-body">
+    4:     <%= form_for @user, class: 'form-horizontal' do |form| %>
+    5:       <%= form.text_field :username %>
+    6:     <% end %>
+    7:   </div>
+  
+app/views/user/new.html.erb:4
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:32:05 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1137)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1239)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.1ms | Allocations: 7095)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="panel panel-default">
+  <div class="panel-heading">S'inscrire</div>
+  <div class="panel-body">
+<%= form_with model: user do |form|, class: 'form-horizontal' %>
+      <%= form.text_field :username %>
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <div class="panel panel-default">
+2:      <div class="panel-heading">S'inscrire</div>
+3:      <div class="panel-body">
+4:    <%= form_with model: user do |form|, class: 'form-horizontal' %>
+5:          <%= form.text_field :username %>
+6:        <% end %>
+7:      </div>
+8:    </div>
+  
+app/views/user/new.html.erb:4: syntax error, unexpected ','
+app/views/user/new.html.erb:11: syntax error, unexpected `end'
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:32:25 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1212)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.4ms | Allocations: 7056)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="panel panel-default">
+  <div class="panel-heading">S'inscrire</div>
+  <div class="panel-body">
+<%= form_with @user do |form|, class: 'form-horizontal' %>
+      <%= form.text_field :username %>
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <div class="panel panel-default">
+2:      <div class="panel-heading">S'inscrire</div>
+3:      <div class="panel-body">
+4:    <%= form_with @user do |form|, class: 'form-horizontal' %>
+5:          <%= form.text_field :username %>
+6:        <% end %>
+7:      </div>
+8:    </div>
+  
+app/views/user/new.html.erb:4: syntax error, unexpected ','
+app/views/user/new.html.erb:11: syntax error, unexpected `end'
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:33:29 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1112)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 1214)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.2ms | Allocations: 7059)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="panel panel-default">
+  <div class="panel-heading">S'inscrire</div>
+  <div class="panel-body">
+<%= form_for @user do |form|, class: 'form-horizontal' %>
+      <%= form.text_field :username %>
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <div class="panel panel-default">
+2:      <div class="panel-heading">S'inscrire</div>
+3:      <div class="panel-body">
+4:    <%= form_for @user do |form|, class: 'form-horizontal' %>
+5:          <%= form.text_field :username %>
+6:        <% end %>
+7:      </div>
+8:    </div>
+  
+app/views/user/new.html.erb:4: syntax error, unexpected ','
+app/views/user/new.html.erb:11: syntax error, unexpected `end'
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:33:53 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1148)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 1240)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.5ms | Allocations: 7054)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for an instance of #<Class:0x00007f406d0f8ca0>):
+    1: <div class="panel panel-default">
+    2:   <div class="panel-heading">S'inscrire</div>
+    3:   <div class="panel-body">
+    4: <%= form_for @user do |form| %>
+    5:       <%= form.text_field :username %>
+    6:     <% end %>
+    7:   </div>
+  
+app/views/user/new.html.erb:4
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:34:06 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1071)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1163)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.1ms | Allocations: 6979)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    1: <div class="panel panel-default">
+    2:   <div class="panel-heading">S'inscrire</div>
+    3:   <div class="panel-body">
+    4: <%= form_with @user do |form| %>
+    5:       <%= form.text_field :username %>
+    6:     <% end %>
+    7:   </div>
+  
+app/views/user/new.html.erb:4
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:34:24 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1824)
+  Rendered layout layouts/application.html.erb (Duration: 215.3ms | Allocations: 77404)
+Completed 200 OK in 227ms (Views: 216.6ms | ActiveRecord: 2.4ms | Allocations: 83246)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:36:35 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2014)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2467)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 2.6ms | Allocations: 27277)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="panel panel-default">
+  <div class="panel-heading">S'inscrire</div>
+  <div class="panel-body">
+<%= form_with user: @user do |form|, class: 'form-horizontal' %>
+      <%= form.text_field :username %>
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <div class="panel panel-default">
+2:      <div class="panel-heading">S'inscrire</div>
+3:      <div class="panel-body">
+4:    <%= form_with user: @user do |form|, class: 'form-horizontal' %>
+5:          <%= form.text_field :username %>
+6:        <% end %>
+7:      </div>
+8:    </div>
+  
+app/views/user/new.html.erb:4: syntax error, unexpected ','
+app/views/user/new.html.erb:11: syntax error, unexpected `end'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:37:04 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1494)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1896)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.6ms | Allocations: 8389)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="panel panel-default">
+  <div class="panel-heading">S'inscrire</div>
+  <div class="panel-body">
+<%= form_with user: @user do |form|, class: 'form-horizontal' %>
+      <%= form.text_field :username %>
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <div class="panel panel-default">
+2:      <div class="panel-heading">S'inscrire</div>
+3:      <div class="panel-body">
+4:    <%= form_with user: @user do |form|, class: 'form-horizontal' %>
+5:          <%= form.text_field :username %>
+6:        <% end %>
+7:      </div>
+8:    </div>
+  
+app/views/user/new.html.erb:4: syntax error, unexpected ','
+app/views/user/new.html.erb:11: syntax error, unexpected `end'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:37:14 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1842)
+  Rendered layout layouts/application.html.erb (Duration: 442.1ms | Allocations: 226377)
+Completed 200 OK in 454ms (Views: 443.7ms | ActiveRecord: 2.8ms | Allocations: 233354)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:37:19 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1497)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3590)
+Completed 200 OK in 23ms (Views: 7.4ms | ActiveRecord: 3.7ms | Allocations: 9754)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:37:22 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1790)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 3878)
+Completed 200 OK in 37ms (Views: 15.7ms | ActiveRecord: 4.2ms | Allocations: 9994)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:37:47 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1806)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3907)
+Completed 200 OK in 20ms (Views: 7.1ms | ActiveRecord: 3.3ms | Allocations: 10074)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:37:53 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 948)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3117)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3674)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:38:00 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1522)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3623)
+Completed 200 OK in 18ms (Views: 6.6ms | ActiveRecord: 4.1ms | Allocations: 9759)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:41:08 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1814)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4792)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.1ms | Allocations: 10913)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `root_path' for an instance of #<Class:0x00007f22d0d449d8>):
+    15:       <div class="container">
+    16:         <div class="navbar-header">
+    17: 
+    18: <%= link_to 'Petsy', root_path, class: 'navbar-brand' %>
+    19:         </div>
+    20: 
+    21:       </div>
+  
+app/views/layouts/application.html.erb:18
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:41:39 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1828)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4006)
+Completed 200 OK in 27ms (Views: 11.5ms | ActiveRecord: 4.0ms | Allocations: 10169)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:41:42 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:41:44 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:44:22 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1838)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4071)
+Completed 200 OK in 24ms (Views: 10.4ms | ActiveRecord: 5.0ms | Allocations: 10236)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:44:28 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 963)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2891)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3447)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:44:29 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 951)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3171)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3722)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:44:32 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:44:35 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:44:52 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:44:54 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:45:02 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:45:10 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:45:46 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:46:04 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1726)
+  Rendered layout layouts/application.html.erb (Duration: 64.9ms | Allocations: 51278)
+Completed 200 OK in 99ms (Views: 66.1ms | ActiveRecord: 2.9ms | Allocations: 73531)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:46:34 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1813)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4049)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 2.8ms | Allocations: 10247)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:47:48 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3733)
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 2.3ms | Allocations: 9900)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:48:05 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1487)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3721)
+Completed 200 OK in 21ms (Views: 7.3ms | ActiveRecord: 4.2ms | Allocations: 9858)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:49:02 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1508)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3755)
+Completed 200 OK in 21ms (Views: 6.6ms | ActiveRecord: 3.9ms | Allocations: 9908)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:49:15 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1803)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 4050)
+Completed 200 OK in 12ms (Views: 4.7ms | ActiveRecord: 2.0ms | Allocations: 10192)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-13 23:51:18 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1529)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3776)
+Completed 200 OK in 15ms (Views: 6.0ms | ActiveRecord: 2.7ms | Allocations: 9932)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:51:22 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 965)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 2900)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 3454)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:51:45 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1833)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4067)
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 2.4ms | Allocations: 10232)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:52:18 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1553)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3800)
+Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 2.3ms | Allocations: 9956)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:52:24 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 958)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3171)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3730)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:52:24 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 958)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 3171)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 3727)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:52:26 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 952)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3165)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3716)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:52:27 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 976)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3204)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3760)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:52:56 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1845)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4092)
+Completed 200 OK in 17ms (Views: 6.4ms | ActiveRecord: 2.4ms | Allocations: 10253)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:52:59 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1548)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3780)
+Completed 200 OK in 15ms (Views: 5.8ms | ActiveRecord: 2.8ms | Allocations: 9895)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:55:13 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 7137)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 9703)
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 2.3ms | Allocations: 15859)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:56:19 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2398)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4643)
+Completed 200 OK in 30ms (Views: 10.8ms | ActiveRecord: 4.7ms | Allocations: 10805)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:58:51 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1616)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2020)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.0ms | Allocations: 8510)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="panel panel-default">
+  <div class="panel-heading">S'inscrire</div>
+  <div class="panel-body">
+    <%= form_with user: @user, class: 'form-horizontal' do |form| %>
+
+      <div class="form-group">
+        <%= form.label :username "Nom d'utilisateur", class: 'col-md4 control-label' %>
+        <div class="col-md6">
+          <%= form.text_field :username, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.label "Email", class: 'col-md4 control-label' %>
+        <div class="col-md6">
+          <%= form.text_field :email, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= form.label "Mot de passe", class: 'col-md4 control-label' %>
+        <div class="col-md6">
+          <%= form.password_field :password, class: 'form-control' %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <div class="panel panel-default">
+2:      <div class="panel-heading">S'inscrire</div>
+3:      <div class="panel-body">
+4:        <%= form_with user: @user, class: 'form-horizontal' do |form| %>
+5:    
+6:          <div class="form-group">
+7:            <%= form.label :username "Nom d'utilisateur", class: 'col-md4 control-label' %>
+8:            <div class="col-md6">
+9:              <%= form.text_field :username, class: 'form-control' %>
+10:            </div>
+11:          </div>
+12:    
+13:          <div class="form-group">
+14:            <%= form.label "Email", class: 'col-md4 control-label' %>
+15:            <div class="col-md6">
+16:              <%= form.text_field :email, class: 'form-control' %>
+17:            </div>
+18:          </div>
+19:    
+20:          <div class="form-group">
+21:            <%= form.label "Mot de passe", class: 'col-md4 control-label' %>
+22:            <div class="col-md6">
+23:              <%= form.password_field :password, class: 'form-control' %>
+24:            </div>
+25:          </div>
+26:    
+27:        <% end %>
+28:      </div>
+29:    </div>
+  
+app/views/user/new.html.erb:7: syntax error, unexpected string literal, expecting ')'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:59:07 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 6526)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 9104)
+Completed 200 OK in 21ms (Views: 10.5ms | ActiveRecord: 2.5ms | Allocations: 15283)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-13 23:59:07 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 3279)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 5507)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 6071)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user/new.html.erb"], :force_reload=>false}
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:00:15 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4311)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6558)
+Completed 200 OK in 21ms (Views: 12.7ms | ActiveRecord: 2.4ms | Allocations: 12723)
+
+
+Started GET "/user/new" for 127.0.0.1 at 2024-01-14 00:00:22 +0100
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3290)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 5518)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 6069)
+
+
