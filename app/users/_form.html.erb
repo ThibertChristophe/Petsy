@@ -1,8 +1,4 @@
-<div class="panel panel-default">
-  <div class="panel-heading">S'inscrire</div>
-  <div class="panel-body">
-    <%= form_with user: @user, html: {class: 'form-horizontal'} do |form| %>
-
+<%= form_with model: user do |form| %>
       <div class="form-group">
         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
         <div class="col-md-6">
@@ -43,5 +39,3 @@
         </div>
       </div>
     <% end %>
-  </div>
-</div>

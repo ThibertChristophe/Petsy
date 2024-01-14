@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def new
     @user = User.new
   end
@@ -7,8 +7,8 @@ class UserController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      flash[:success] = "Utilisateur créé avec succès"
-      # redirect_to @article
+      flash[:success] = 'Utilisateur créé avec succès'
+    #      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
