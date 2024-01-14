@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'Utilisateur créé avec succès'
-    #      redirect_to root_path
+      UserMailer.confirm(@user).deliver_now
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end

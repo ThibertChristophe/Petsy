@@ -1807,3 +1807,801 @@ Processing by UsersController#create as HTML
 Completed 422 Unprocessable Entity in 216ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4617)
 
 
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:19:55 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"qweq", "email"=>"weqweqw", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1429)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1820)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.8ms | Allocations: 9148)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007fc87d629880>):
+    1: <div class="alert alert-danger">
+    2:   <ul>
+    3:         <% user.errors.full_messages.each do |message| %>
+    4:           <li class='text-danger'><%= message %></li>
+    5:         <% end %>
+    6:   </ul>
+  
+app/views/users/new.html.erb:3
+app/controllers/users_controller.rb:13:in `create'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:20:08 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"qweq", "email"=>"weqweqw", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 1946)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2608)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4831)
+Completed 422 Unprocessable Entity in 17ms (Views: 7.4ms | ActiveRecord: 2.7ms | Allocations: 12156)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:20:12 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.7ms | Allocations: 2795)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3768)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 5682)
+Completed 422 Unprocessable Entity in 16ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 7066)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:20:15 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"ewe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.8ms | Allocations: 2039)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3008)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 5213)
+Completed 422 Unprocessable Entity in 16ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 6604)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:20:16 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewew", "email"=>"ewe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.8ms | Allocations: 1283)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1952)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4160)
+Completed 422 Unprocessable Entity in 24ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 5529)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:20:18 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewew", "email"=>"ewe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1320)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2006)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4212)
+Completed 422 Unprocessable Entity in 213ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 5387)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:20:20 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewew", "email"=>"ewe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1283)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1952)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4157)
+Completed 422 Unprocessable Entity in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 5518)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:20:52 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewew", "email"=>"ewe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 1946)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2898)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5408)
+Completed 422 Unprocessable Entity in 16ms (Views: 7.8ms | ActiveRecord: 2.1ms | Allocations: 12740)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:21:36 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewew", "email"=>"ewe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 1946)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2608)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4831)
+Completed 422 Unprocessable Entity in 17ms (Views: 7.0ms | ActiveRecord: 2.6ms | Allocations: 11848)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:22:26 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewew", "email"=>"ewe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1283)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1668)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3882)
+Completed 422 Unprocessable Entity in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4955)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-14 22:22:31 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 728)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1099)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3308)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3871)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-14 22:22:34 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.3ms | Allocations: 716)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1087)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3311)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 3871)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-14 22:22:35 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.7ms | Allocations: 746)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 826)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2708)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3264)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started GET "/users/new" for 127.0.0.1 at 2024-01-14 22:23:24 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 1402)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1788)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4013)
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 2.3ms | Allocations: 10417)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-14 22:23:30 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 722)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 804)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3028)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3578)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:23:32 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.9ms | Allocations: 2802)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4092)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6312)
+Completed 422 Unprocessable Entity in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 7562)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:23:35 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 2795)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 4068)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 6273)
+Completed 422 Unprocessable Entity in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 7667)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-14 22:23:39 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 734)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1107)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3316)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 3871)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-01-14 22:23:43 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (7.1.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:19:in `call!'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:9:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:28:47 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 17.0ms | Allocations: 4775)
+  Rendered users/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 7049)
+  Rendered layout layouts/application.html.erb (Duration: 105.3ms | Allocations: 56552)
+Completed 422 Unprocessable Entity in 187ms (Views: 112.7ms | ActiveRecord: 3.2ms | Allocations: 95191)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:28:52 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"dwdw", "email"=>"dwdw", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'dwdw' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'dwdw' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 2039)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2716)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4637)
+Completed 422 Unprocessable Entity in 12ms (Views: 5.3ms | ActiveRecord: 0.6ms | Allocations: 9372)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:30:24 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"John", "email"=>"john.doe@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'John' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'john.doe@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO `users` (`username`, `email`, `confirm`, `confirmation_token`, `password_digest`, `firstname`, `lastname`, `avatar`, `created_at`, `updated_at`) VALUES ('John', 'john.doe@gmail.com', FALSE, NULL, '$2a$12$MULNi0oN7KSMarIttkBApOx1IiEV4/cv6Ri8uNVNPTwZ3wof2tw4C', NULL, NULL, FALSE, '2024-01-14 21:30:24.777645', '2024-01-14 21:30:24.777645')[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 236ms (ActiveRecord: 10.0ms | Allocations: 8473)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:30:28 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"John", "email"=>"john.doe@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'John' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'john.doe@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.6ms | Allocations: 2039)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3116)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5339)
+Completed 422 Unprocessable Entity in 245ms (Views: 11.2ms | ActiveRecord: 0.9ms | Allocations: 11053)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:32:00 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"John", "email"=>"john.doe@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'John' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'john.doe@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 3460)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 5051)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 7667)
+Completed 422 Unprocessable Entity in 28ms (Views: 9.9ms | ActiveRecord: 4.1ms | Allocations: 19579)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:32:04 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"John", "email"=>"john.doe@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'John' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'john.doe@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.1ms | Allocations: 2832)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4216)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 6436)
+Completed 422 Unprocessable Entity in 231ms (Views: 8.5ms | ActiveRecord: 1.2ms | Allocations: 12477)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:32:05 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"John", "email"=>"john.doe@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'John' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'john.doe@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.7ms | Allocations: 2795)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3777)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5997)
+Completed 422 Unprocessable Entity in 22ms (Views: 10.7ms | ActiveRecord: 1.1ms | Allocations: 11625)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:32:06 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"John", "email"=>"john.doe@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'John' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'john.doe@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.7ms | Allocations: 2795)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3777)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 6011)
+Completed 422 Unprocessable Entity in 30ms (Views: 11.0ms | ActiveRecord: 1.0ms | Allocations: 11370)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+Started GET "/users/new" for 127.0.0.1 at 2024-01-14 22:37:40 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 17.9ms | Allocations: 3207)
+  Rendered users/new.html.erb within layouts/application (Duration: 18.9ms | Allocations: 3799)
+  Rendered layout layouts/application.html.erb (Duration: 78.3ms | Allocations: 52851)
+Completed 200 OK in 118ms (Views: 81.3ms | ActiveRecord: 2.6ms | Allocations: 80337)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user_mailer/confirm.text.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user_mailer/confirm.text.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user_mailer/confirm.text.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user_mailer/confirm.text.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-14 22:55:33 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | Allocations: 1398)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2077)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4689)
+Completed 200 OK in 23ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 10921)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-14 22:56:00 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | Allocations: 734)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1108)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3332)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3645)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-01-14 22:56:24 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`username`, `email`, `confirm`, `confirmation_token`, `password_digest`, `firstname`, `lastname`, `avatar`, `created_at`, `updated_at`) VALUES ('test', 'test@gmail.com', FALSE, 't8sUgRi37ztX3zFccCvDscVP', '$2a$12$ATqdr7Q3E7d5BG2NJ.IK5OYdoMLqj2HbIh52w7rcaRyAVMB/jcumW', NULL, NULL, FALSE, '2024-01-14 21:56:24.510371', '2024-01-14 21:56:24.510371')[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 348ms (ActiveRecord: 5.5ms | Allocations: 122556)
+
+
+  
+NoMethodError (undefined method `default_defaults_options=' for class ActionMailer::Base):
+  
+app/mailers/application_mailer.rb:1:in `<main>'
+app/mailers/user_mailer.rb:1:in `<main>'
+app/controllers/users_controller.rb:11:in `create'
+Started GET "/users" for ::1 at 2024-01-14 22:57:40 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (7.1.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:19:in `call!'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:9:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-01-14 22:57:44 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 601)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3214)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3817)
+
+
+Started POST "/users" for ::1 at 2024-01-14 22:57:52 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 2053)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3388)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 5608)
+Completed 422 Unprocessable Entity in 223ms (Views: 5.9ms | ActiveRecord: 0.9ms | Allocations: 11675)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 2[0m
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+Started POST "/users" for ::1 at 2024-01-14 22:58:35 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1320)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1807)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3735)
+Completed 422 Unprocessable Entity in 219ms (Views: 4.0ms | ActiveRecord: 1.1ms | Allocations: 9486)
+
+
+Started POST "/users" for ::1 at 2024-01-14 22:58:39 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO `users` (`username`, `email`, `confirm`, `confirmation_token`, `password_digest`, `firstname`, `lastname`, `avatar`, `created_at`, `updated_at`) VALUES ('test', 'test@gmail.com', FALSE, 'yvr2yDvRP1xob9XF7cPvVGNY', '$2a$12$HQohIyYoUDYXwiXXhWD67u4nApoDRSy3IvyGZEBNQaEtPmClFMpMi', NULL, NULL, FALSE, '2024-01-14 21:58:39.609284', '2024-01-14 21:58:39.609284')[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 9.2ms | Allocations: 18493)
+
+
+  
+NoMethodError (undefined method `default_defaults_options=' for class ActionMailer::Base):
+  
+app/mailers/application_mailer.rb:1:in `<main>'
+app/mailers/user_mailer.rb:1:in `<main>'
+app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users" for ::1 at 2024-01-14 23:00:14 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `email`, `confirm`, `confirmation_token`, `password_digest`, `firstname`, `lastname`, `avatar`, `created_at`, `updated_at`) VALUES ('test', 'test@gmail.com', FALSE, 'Euks5EXbg3BWnbYwwUz3T2Ax', '$2a$12$yzJ/3NzKxAO6meLHBh.3QuHq/ByYD4o0jQZLZp4wz0G59RAv2a/Wm', NULL, NULL, FALSE, '2024-01-14 22:00:14.571287', '2024-01-14 22:00:14.571287')[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 6.3ms | Allocations: 18486)
+
+
+  
+NoMethodError (undefined method `default_defaults_options=' for class ActionMailer::Base):
+  
+app/mailers/application_mailer.rb:1:in `<main>'
+app/mailers/user_mailer.rb:1:in `<main>'
+app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 4[0m
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users" for ::1 at 2024-01-14 23:01:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | Allocations: 2562)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3961)
+  Rendered layout layouts/application.html.erb (Duration: 131.5ms | Allocations: 53868)
+Completed 422 Unprocessable Entity in 412ms (Views: 137.5ms | ActiveRecord: 4.6ms | Allocations: 87994)
+
+
+Started GET "/" for ::1 at 2024-01-14 23:01:54 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 716)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1090)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3317)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3932)
+
+
+Started POST "/users" for ::1 at 2024-01-14 23:02:00 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `email`, `confirm`, `confirmation_token`, `password_digest`, `firstname`, `lastname`, `avatar`, `created_at`, `updated_at`) VALUES ('test', 'test@gmail.com', FALSE, 'SFBKMRB7MivZJVkjjE4acDzD', '$2a$12$kH3HPRjBMrkh8Nngbdd06eSyK6bQp6vmu8FUtfjtEVvLxZyOTQtyu', NULL, NULL, FALSE, '2024-01-14 22:02:01.119410', '2024-01-14 22:02:01.119410')[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/confirm.text.erb within layouts/mailer
+  Rendered user_mailer/confirm.text.erb within layouts/mailer (Duration: 1.1ms | Allocations: 1641)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.6ms | Allocations: 2045)
+UserMailer#confirm: processed outbound mail in 11.1ms
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 14.1ms | Allocations: 33245)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check Bonjour
+
+Merci <%= @user.username %> pour votre inscription.
+
+Veuillez cliquer sur le lien pour valider votre compte
+
+<%= confirm_user_url id: @user.id token: @user.confirmation_token %>
+
+Merci
+
+):
+1:    Bonjour
+2:    
+3:    Merci <%= @user.username %> pour votre inscription.
+4:    
+5:    Veuillez cliquer sur le lien pour valider votre compte
+6:    
+7:    <%= confirm_user_url id: @user.id token: @user.confirmation_token %>
+8:    
+9:    Merci
+  
+app/views/user_mailer/confirm.text.erb:7: syntax error, unexpected label, expecting ')'
+app/mailers/user_mailer.rb:4:in `confirm'
+app/controllers/users_controller.rb:11:in `create'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user_mailer/confirm.text.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user_mailer/confirm.text.erb"], :force_reload=>false}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 5[0m
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+Started POST "/users" for ::1 at 2024-01-14 23:03:16 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `email`, `confirm`, `confirmation_token`, `password_digest`, `firstname`, `lastname`, `avatar`, `created_at`, `updated_at`) VALUES ('test', 'test@gmail.com', FALSE, 'CiAXv6oWhuWNg3Effe2kDjCQ', '$2a$12$2pFCjFRZGlA6W3J4o5VNru07Kxp3OJg6Kn..UfJqgb8/zirkH8mRy', NULL, NULL, FALSE, '2024-01-14 22:03:16.465660', '2024-01-14 22:03:16.465660')[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/confirm.text.erb within layouts/mailer
+  Rendered user_mailer/confirm.text.erb within layouts/mailer (Duration: 0.8ms | Allocations: 603)
+  Rendered layout layouts/mailer.text.erb (Duration: 2.2ms | Allocations: 1409)
+UserMailer#confirm: processed outbound mail in 11.5ms
+Delivered mail 65a45a24792e2_5da13f84577be@Desktop-Chris.mail (206.1ms)
+Date: Sun, 14 Jan 2024 23:03:16 +0100
+From: from@example.com
+To: test@gmail.com
+Message-ID: <65a45a24792e2_5da13f84577be@Desktop-Chris.mail>
+Subject: Confirmation inscription
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour
+
+Merci test pour votre inscription.
+
+Veuillez cliquer sur le lien pour valider votre compte
+
+http://localhost:3000/users/6/confirm?token=CiAXv6oWhuWNg3Effe2kDjCQ
+
+Merci
+
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 463ms (ActiveRecord: 9.5ms | Allocations: 46306)
+
+
+Started GET "/" for ::1 at 2024-01-14 23:03:16 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 1369)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2046)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4661)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 5757)
+
+
