@@ -3759,3 +3759,959 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 4380)
 
 
+Started GET "/profile" for ::1 at 2024-01-15 22:50:27 +0100
+Processing by UsersController#edit as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1799)
+
+
+  
+NoMethodError (undefined method `id' for an instance of Hash):
+  
+app/controllers/users_controller.rb:37:in `edit'
+Started GET "/profile" for ::1 at 2024-01-15 22:53:51 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:37:in `edit'
+Completed 406 Not Acceptable in 13ms (ActiveRecord: 0.7ms | Allocations: 7998)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#edit is missing a template for request formats: text/html):
+  
+actionpack (7.1.2) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.2) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.2) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.2) lib/active_record/migration.rb:654:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:19:in `call!'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:9:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 22:56:49 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 1725)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1997)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2686)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 3.3ms | Allocations: 11349)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for an instance of #<Class:0x00007f08bd212808>):
+    1:    <%= form_with model: user, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:2
+Started GET "/profile" for ::1 at 2024-01-15 23:00:10 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:02:14 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.3ms | Allocations: 114)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2587)
+Completed 200 OK in 14ms (Views: 3.9ms | ActiveRecord: 2.3ms | Allocations: 10685)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:02:26 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.5ms | Allocations: 407)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2880)
+Completed 200 OK in 19ms (Views: 5.8ms | ActiveRecord: 3.3ms | Allocations: 11284)
+
+
+Started GET "/profile" for ::1 at 2024-01-15 23:02:28 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2034)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 3745)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:02:43 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 428)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2889)
+Completed 200 OK in 17ms (Views: 5.9ms | ActiveRecord: 2.7ms | Allocations: 10967)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb", "/home/chris/Ruby/Petsy/app/views/users/confirm.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:03:25 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.6ms | Allocations: 1693)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2271)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2960)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.0ms | Allocations: 11326)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for an instance of #<Class:0x00007f08bd2b8de8>):
+    1:    <%= form_with model: user, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:04:47 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 1653)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1932)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2621)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.8ms | Allocations: 10993)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007f08bd2b5468>):
+    1:    <%= form_with model: user, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:05:21 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1692)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2268)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2957)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.3ms | Allocations: 11619)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for an instance of #<Class:0x00007f08bd5c7c78>):
+    1:    <%= form_with model: @user, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:06:22 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 1693)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2269)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2958)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.1ms | Allocations: 11638)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for an instance of #<Class:0x00007f08bfd66720>):
+    1:    <%= form_with model: user, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:11:26 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 979)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3401)
+Completed 200 OK in 14ms (Views: 5.0ms | ActiveRecord: 2.6ms | Allocations: 11477)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:11:55 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1541)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3951)
+Completed 200 OK in 19ms (Views: 7.5ms | ActiveRecord: 2.6ms | Allocations: 12042)
+
+
+Started GET "/profile" for ::1 at 2024-01-15 23:11:58 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.9ms | Allocations: 553)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2553)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 3950)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:13:38 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1249)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3659)
+Completed 200 OK in 16ms (Views: 5.5ms | ActiveRecord: 2.4ms | Allocations: 11717)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:13:43 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1061)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1458)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.3ms | Allocations: 10069)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007f08bcd5ee38>):
+    1: <h1><%= @user.id %></h1>
+    2: <%= render 'form', user: user, url: profile_path %>
+  
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:14:00 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1187)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1802)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4504)
+Completed 200 OK in 18ms (Views: 6.9ms | ActiveRecord: 2.6ms | Allocations: 12886)
+
+
+Started GET "/" for ::1 at 2024-01-15 23:14:09 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 1733)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2063)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2751)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3401)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `url' for an instance of #<Class:0x00007f08bcc27628>):
+    1:    <%= form_with model: user,url: url, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:14
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started GET "/" for ::1 at 2024-01-15 23:14:48 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 1330)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2044)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4747)
+Completed 200 OK in 15ms (Views: 6.6ms | ActiveRecord: 2.4ms | Allocations: 11379)
+
+
+Started GET "/profile" for ::1 at 2024-01-15 23:14:52 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.3ms | Allocations: 529)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 756)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2756)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 4915)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:15:27 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 1187)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1496)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4198)
+Completed 200 OK in 20ms (Views: 7.8ms | ActiveRecord: 2.6ms | Allocations: 12567)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:16:56 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 1702)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2316)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3012)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.9ms | Allocations: 11383)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check    <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
+
+      <div class="form-group">
+        <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :username, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:username).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :email, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:email).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:password).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <%= form.submit if url == profile_path ?  "Modifier" : "S'inscrire", class: 'btn btn-success'  %>
+        </div>
+      </div>
+    <% end %>
+
+):
+1:       <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
+2:    
+3:          <div class="form-group">
+4:            <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+5:            <div class="col-md-6">
+6:              <%= form.text_field :username, class: 'form-control' %>
+7:            </div>
+8:            <% user.errors.full_messages_for(:username).each do |message| %>
+9:              <div class='text-danger'><%= message %></div>
+10:            <% end %>
+11:          </div>
+12:    
+13:          <div class="form-group">
+14:            <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+15:            <div class="col-md-6">
+16:              <%= form.text_field :email, class: 'form-control' %>
+17:            </div>
+18:            <% user.errors.full_messages_for(:email).each do |message| %>
+19:              <div class='text-danger'><%= message %></div>
+20:            <% end %>
+21:          </div>
+22:    
+23:          <div class="form-group">
+24:            <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+25:            <div class="col-md-6">
+26:              <%= form.password_field :password, class: 'form-control' %>
+27:            </div>
+28:            <% user.errors.full_messages_for(:password).each do |message| %>
+29:              <div class='text-danger'><%= message %></div>
+30:            <% end %>
+31:          </div>
+32:    
+33:          <div class="form-group">
+34:            <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+35:            <div class="col-md-6">
+36:              <%= form.password_field :password_confirmation, class: 'form-control' %>
+37:            </div>
+38:            <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
+39:              <div class='text-danger'><%= message %></div>
+40:            <% end %>
+41:          </div>
+42:    
+43:          <div class="form-group">
+44:            <div class="col-md-6 col-md-offset-4">
+45:              <%= form.submit if url == profile_path ?  "Modifier" : "S'inscrire", class: 'btn btn-success'  %>
+46:            </div>
+47:          </div>
+48:        <% end %>
+  
+app/views/users/_form.html.erb:45: syntax error, unexpected ',', expecting ')'
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:17:14 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.7ms | Allocations: 1677)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1996)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2692)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.2ms | Allocations: 10774)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check    <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
+
+      <div class="form-group">
+        <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :username, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:username).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :email, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:email).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:password).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <%= form.submit if url == profile_path ? "Modifier" : "S'inscrire", class: 'btn btn-success'  %>
+        </div>
+      </div>
+    <% end %>
+
+):
+1:       <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
+2:    
+3:          <div class="form-group">
+4:            <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+5:            <div class="col-md-6">
+6:              <%= form.text_field :username, class: 'form-control' %>
+7:            </div>
+8:            <% user.errors.full_messages_for(:username).each do |message| %>
+9:              <div class='text-danger'><%= message %></div>
+10:            <% end %>
+11:          </div>
+12:    
+13:          <div class="form-group">
+14:            <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+15:            <div class="col-md-6">
+16:              <%= form.text_field :email, class: 'form-control' %>
+17:            </div>
+18:            <% user.errors.full_messages_for(:email).each do |message| %>
+19:              <div class='text-danger'><%= message %></div>
+20:            <% end %>
+21:          </div>
+22:    
+23:          <div class="form-group">
+24:            <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+25:            <div class="col-md-6">
+26:              <%= form.password_field :password, class: 'form-control' %>
+27:            </div>
+28:            <% user.errors.full_messages_for(:password).each do |message| %>
+29:              <div class='text-danger'><%= message %></div>
+30:            <% end %>
+31:          </div>
+32:    
+33:          <div class="form-group">
+34:            <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+35:            <div class="col-md-6">
+36:              <%= form.password_field :password_confirmation, class: 'form-control' %>
+37:            </div>
+38:            <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
+39:              <div class='text-danger'><%= message %></div>
+40:            <% end %>
+41:          </div>
+42:    
+43:          <div class="form-group">
+44:            <div class="col-md-6 col-md-offset-4">
+45:              <%= form.submit if url == profile_path ? "Modifier" : "S'inscrire", class: 'btn btn-success'  %>
+46:            </div>
+47:          </div>
+48:        <% end %>
+  
+app/views/users/_form.html.erb:45: syntax error, unexpected ',', expecting ')'
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:17:37 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.7ms | Allocations: 1692)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2020)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2719)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.6ms | Allocations: 10801)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check    <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
+
+      <div class="form-group">
+        <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :username, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:username).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :email, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:email).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:password).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <%= form.submit (if url == profile_path ? "Modifier" : "S'inscrire", class: 'btn btn-success')  %>
+        </div>
+      </div>
+    <% end %>
+
+):
+1:       <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
+2:    
+3:          <div class="form-group">
+4:            <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+5:            <div class="col-md-6">
+6:              <%= form.text_field :username, class: 'form-control' %>
+7:            </div>
+8:            <% user.errors.full_messages_for(:username).each do |message| %>
+9:              <div class='text-danger'><%= message %></div>
+10:            <% end %>
+11:          </div>
+12:    
+13:          <div class="form-group">
+14:            <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+15:            <div class="col-md-6">
+16:              <%= form.text_field :email, class: 'form-control' %>
+17:            </div>
+18:            <% user.errors.full_messages_for(:email).each do |message| %>
+19:              <div class='text-danger'><%= message %></div>
+20:            <% end %>
+21:          </div>
+22:    
+23:          <div class="form-group">
+24:            <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+25:            <div class="col-md-6">
+26:              <%= form.password_field :password, class: 'form-control' %>
+27:            </div>
+28:            <% user.errors.full_messages_for(:password).each do |message| %>
+29:              <div class='text-danger'><%= message %></div>
+30:            <% end %>
+31:          </div>
+32:    
+33:          <div class="form-group">
+34:            <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+35:            <div class="col-md-6">
+36:              <%= form.password_field :password_confirmation, class: 'form-control' %>
+37:            </div>
+38:            <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
+39:              <div class='text-danger'><%= message %></div>
+40:            <% end %>
+41:          </div>
+42:    
+43:          <div class="form-group">
+44:            <div class="col-md-6 col-md-offset-4">
+45:              <%= form.submit (if url == profile_path ? "Modifier" : "S'inscrire", class: 'btn btn-success')  %>
+46:            </div>
+47:          </div>
+48:        <% end %>
+  
+app/views/users/_form.html.erb:45: syntax error, unexpected ',', expecting `then' or ';' or '\n'
+app/views/users/_form.html.erb:50: syntax error, unexpected `end', expecting ')'
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:18:03 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 1692)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2317)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3016)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.6ms | Allocations: 11701)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check    <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
+
+      <div class="form-group">
+        <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :username, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:username).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :email, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:email).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:password).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <%= form.submit (if url == profile_path ? "Modifier" : "S'inscrire"), class: 'btn btn-success' %>
+        </div>
+      </div>
+    <% end %>
+
+):
+1:       <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
+2:    
+3:          <div class="form-group">
+4:            <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+5:            <div class="col-md-6">
+6:              <%= form.text_field :username, class: 'form-control' %>
+7:            </div>
+8:            <% user.errors.full_messages_for(:username).each do |message| %>
+9:              <div class='text-danger'><%= message %></div>
+10:            <% end %>
+11:          </div>
+12:    
+13:          <div class="form-group">
+14:            <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+15:            <div class="col-md-6">
+16:              <%= form.text_field :email, class: 'form-control' %>
+17:            </div>
+18:            <% user.errors.full_messages_for(:email).each do |message| %>
+19:              <div class='text-danger'><%= message %></div>
+20:            <% end %>
+21:          </div>
+22:    
+23:          <div class="form-group">
+24:            <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+25:            <div class="col-md-6">
+26:              <%= form.password_field :password, class: 'form-control' %>
+27:            </div>
+28:            <% user.errors.full_messages_for(:password).each do |message| %>
+29:              <div class='text-danger'><%= message %></div>
+30:            <% end %>
+31:          </div>
+32:    
+33:          <div class="form-group">
+34:            <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+35:            <div class="col-md-6">
+36:              <%= form.password_field :password_confirmation, class: 'form-control' %>
+37:            </div>
+38:            <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
+39:              <div class='text-danger'><%= message %></div>
+40:            <% end %>
+41:          </div>
+42:    
+43:          <div class="form-group">
+44:            <div class="col-md-6 col-md-offset-4">
+45:              <%= form.submit (if url == profile_path ? "Modifier" : "S'inscrire"), class: 'btn btn-success' %>
+46:            </div>
+47:          </div>
+48:        <% end %>
+  
+app/views/users/_form.html.erb:45: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/users/_form.html.erb:50: syntax error, unexpected `end', expecting ')'
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:20:07 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1187)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1778)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4188)
+Completed 200 OK in 16ms (Views: 6.5ms | ActiveRecord: 2.4ms | Allocations: 12265)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:21:07 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 1650)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2251)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2940)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.2ms | Allocations: 11581)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `textbtn' for an instance of #<Class:0x00007f08bcdab738>):
+    1:    <%= form_with model: user, url: url, textbtn: textbtn, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:2
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-15 23:21:57 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1487)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3897)
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 2.8ms | Allocations: 11980)
+
+
+Started GET "/" for ::1 at 2024-01-15 23:22:01 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 1732)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2380)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3068)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4023)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `textbtn' for an instance of #<Class:0x00007f08c452a480>):
+    1:    <%= form_with model: user, url: url, textbtn: textbtn, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:14
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started GET "/" for ::1 at 2024-01-15 23:22:15 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 1329)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1751)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4447)
+Completed 200 OK in 13ms (Views: 5.6ms | ActiveRecord: 2.1ms | Allocations: 11079)
+
+
+Started GET "/profile" for ::1 at 2024-01-15 23:22:20 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 526)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1035)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3327)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 5799)
+
+

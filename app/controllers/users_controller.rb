@@ -26,11 +26,17 @@ class UsersController < ApplicationController
       @user.confirmation_token = nil
       @user.save validate: false
       session[:auth] = { id: @user.id }
-      flash.clear
+      flash[:success] = 'Utilisateur confirmé, vous pouvez vous connecter'
       @result = 'Utilisateur confirmé, vous pouvez vous connecter'
+      redirect_to profile_path
     else
+      flash[:danger] = 'Validation impossible'
       @result = 'Validation impossible'
     end
+  end
+
+  def edit
+    @user = User.find session[:auth]['id']
   end
 
   private
