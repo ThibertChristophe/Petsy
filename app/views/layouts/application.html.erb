@@ -27,6 +27,7 @@
         <div class="alert alert-<%= name %>"><%= msg %></div>
       <% end %>
       <%= yield %>
+      <%= debug session[:auth] %>
     </div>
   </body>
 </html>

@@ -4,6 +4,9 @@ Merci <%= @user.username %> pour votre inscription.
 
 Veuillez cliquer sur le lien pour valider votre compte
 
+<% # id et token seront les noms de parametres de l url %>
+<% # qu on pourra recuperer avec params[:id] et params[:token] %>
+<% # on verifiera ce token si il correspond bien a celui du user %>
 <%= confirm_user_url(id: @user.id, token: @user.confirmation_token) %>
 
 Merci
