@@ -16,10 +16,12 @@
         <div class="navbar-header">
           <%= link_to 'Petsy', root_path, class: 'navbar-brand text-light' %>
         </div>
+        <% if current_user %>
         <ul class="nav navbar-nav navbar-right">
           <%= link_to "S'inscrire", new_user_path, class:'link-light' %>
-          <%= link_to "Se connecter", new_user_path, class:'text-light'%>
+          <%= link_to "Se connecter", new_session_path, class:'text-light'%>
         </ul>
+      <% end %>
       </div>
     </div>
     <div class="container mt-1">

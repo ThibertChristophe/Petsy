@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Se connecter</div>
+  <div class="panel-body">
+<%= form_with model: @user, url: sessions_path, html: {class: 'form-horizontal'} do |form| %>
+
+      <div class="form-group">
+        <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.text_field :username, class: 'form-control' %>
+        </div>
+        <% @user.errors.full_messages_for(:username).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+        <div class="col-md-6">
+          <%= form.password_field :password, class: 'form-control' %>
+        </div>
+        <% @user.errors.full_messages_for(:password).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <%= form.submit 'Se connecter' , class: 'btn btn-success' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
