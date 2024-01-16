@@ -4715,3 +4715,44 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 5799)
 
 
+Started GET "/" for 127.0.0.1 at 2024-01-16 22:19:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.1ms | Allocations: 1933)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2632)
+  Rendered layout layouts/application.html.erb (Duration: 84.8ms | Allocations: 52237)
+Completed 200 OK in 137ms (Views: 88.2ms | ActiveRecord: 8.2ms | Allocations: 77324)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-16 22:47:33 +0100
+Processing by UsersController#new as HTML
+Redirected to 
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2149)
+
+
+  
+NoMethodError (undefined method `new_url' for an instance of UsersController):
+  
+app/controllers/application_controller.rb:8:in `only_signed_in'
+Started GET "/" for 127.0.0.1 at 2024-01-16 22:48:08 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 1335)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1764)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4446)
+Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 10719)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-16 22:57:45 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.6ms | Allocations: 1335)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4148)
+Completed 200 OK in 21ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 10432)
+
+

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[confirm]
 
+  skip_before_action :only_signed_in, only: %i[new create confirm]
+
   def new
     @user = User.new
   end
