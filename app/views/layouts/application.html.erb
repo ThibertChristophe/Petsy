@@ -16,11 +16,27 @@
         <div class="navbar-header">
           <%= link_to 'Petsy', root_path, class: 'navbar-brand text-light' %>
         </div>
-        <% if current_user %>
-        <ul class="nav navbar-nav navbar-right">
-          <%= link_to "S'inscrire", new_user_path, class:'link-light' %>
-          <%= link_to "Se connecter", new_session_path, class:'text-light'%>
-        </ul>
+        <% if user_signed_in? %>
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "Se déconnecter", session_path(session[:auth]['id']), data: {turbo_method: :delete} ,class:'text-light'%>
+              </li>
+            </ul>
+          </div>
+
+        <% else %>
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "S'inscrire", new_user_path, class:'link-light' %>
+              </li>
+              <li>
+                <%= link_to "Se connecter", new_session_path, class:'text-light'%>
+              </li>
+            </ul>
+          </div>
+
       <% end %>
       </div>
     </div>

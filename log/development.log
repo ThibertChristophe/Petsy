@@ -5210,3 +5210,684 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 4314)
 
 
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:40:26 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1495)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4236)
+Completed 200 OK in 28ms (Views: 8.9ms | ActiveRecord: 3.2ms | Allocations: 12346)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:41:09 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1486)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3881)
+Completed 200 OK in 24ms (Views: 9.3ms | ActiveRecord: 3.3ms | Allocations: 11933)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:45:40 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1490)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4672)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 3.8ms | Allocations: 13043)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for an instance of #<Class:0x00007fdb809356f8>):
+    16:         <div class="navbar-header">
+    17:           <%= link_to 'Petsy', root_path, class: 'navbar-brand text-light' %>
+    18:         </div>
+    19:         <% if user_signed_in? %>
+    20:         <ul class="nav navbar-nav navbar-right">
+    21:           <%= link_to "S'inscrire", new_user_path, class:'link-light' %>
+    22:           <%= link_to "Se connecter", new_session_path, class:'text-light'%>
+  
+app/views/layouts/application.html.erb:19
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:47:27 +0100
+  
+NoMethodError (undefined method `user_signed_in?' for class ApplicationController):
+  
+app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:47:42 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1491)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4187)
+Completed 200 OK in 18ms (Views: 7.3ms | ActiveRecord: 2.3ms | Allocations: 12279)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:48:04 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.9ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1787)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4483)
+Completed 200 OK in 30ms (Views: 11.7ms | ActiveRecord: 4.1ms | Allocations: 12878)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-16 23:48:27 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 669)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1295)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3560)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 4241)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:48:32 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.8ms | Allocations: 528)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3178)
+Completed 200 OK in 17ms (Views: 11.4ms | ActiveRecord: 0.5ms | Allocations: 4908)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:49:26 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1785)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4523)
+Completed 200 OK in 27ms (Views: 10.0ms | ActiveRecord: 3.7ms | Allocations: 12913)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:49:38 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.6ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1783)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4475)
+Completed 200 OK in 21ms (Views: 7.9ms | ActiveRecord: 3.2ms | Allocations: 12850)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:50:24 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.8ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1490)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 3897)
+Completed 200 OK in 58ms (Views: 17.6ms | ActiveRecord: 3.4ms | Allocations: 12310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:50:49 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1780)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4233)
+Completed 200 OK in 18ms (Views: 7.1ms | ActiveRecord: 2.6ms | Allocations: 12331)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:51:26 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1780)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4239)
+Completed 200 OK in 21ms (Views: 8.2ms | ActiveRecord: 2.9ms | Allocations: 12308)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:51:59 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1486)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3898)
+Completed 200 OK in 23ms (Views: 6.7ms | ActiveRecord: 3.0ms | Allocations: 11959)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:52:35 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.3ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1490)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3906)
+Completed 200 OK in 17ms (Views: 6.0ms | ActiveRecord: 3.0ms | Allocations: 12007)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:52:45 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1785)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4591)
+Completed 200 OK in 19ms (Views: 7.5ms | ActiveRecord: 2.7ms | Allocations: 12981)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:53:16 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1778)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4001)
+Completed 200 OK in 24ms (Views: 8.5ms | ActiveRecord: 4.7ms | Allocations: 12359)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:53:22 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1787)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4598)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 2.7ms | Allocations: 13010)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2024-01-16 23:53:30 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 912)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2925)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3828)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-16 23:53:32 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 677)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1301)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3599)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4256)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2024-01-16 23:53:35 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 510)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2823)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3404)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-16 23:53:39 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 216ms (ActiveRecord: 0.5ms | Allocations: 2079)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:53:39 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.7ms | Allocations: 528)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3218)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 4631)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:54:09 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.3ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1495)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4294)
+Completed 200 OK in 20ms (Views: 6.9ms | ActiveRecord: 3.1ms | Allocations: 12401)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:54:39 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1785)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4580)
+Completed 200 OK in 25ms (Views: 10.2ms | ActiveRecord: 3.4ms | Allocations: 12387)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:54:47 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 528)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 628)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2930)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 4352)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:54:48 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 528)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3218)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 4934)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:55:08 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1785)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 5369)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.5ms | Allocations: 13440)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"sessions"}, missing required keys: [:id]):
+    20:           <div>
+    21:             <ul class="nav navbar-nav navbar-right">
+    22:               <li>
+    23:                 <%= link_to "Se déconnecter", session_path, class:'text-light'%>
+    24:               </li>
+    25:             </ul>
+    26:           </div>
+  
+app/views/layouts/application.html.erb:23
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:55:13 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.6ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1783)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5366)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.4ms | Allocations: 13453)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"sessions"}, missing required keys: [:id]):
+    20:           <div>
+    21:             <ul class="nav navbar-nav navbar-right">
+    22:               <li>
+    23:                 <%= link_to "Se déconnecter", session_path, class:'text-light'%>
+    24:               </li>
+    25:             </ul>
+    26:           </div>
+  
+app/views/layouts/application.html.erb:23
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:57:42 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.9ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1488)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3553)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.2ms | Allocations: 11661)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>Petsy</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <div class="navbar bg-dark">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to 'Petsy', root_path, class: 'navbar-brand text-light' %>
+        </div>
+        <% if user_signed_in? %>
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "Se déconnecter", session_path, data: {turbo-method: :delete} ,class:'text-light'%>
+              </li>
+            </ul>
+          </div>
+
+        <% else %>
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "S'inscrire", new_user_path, class:'link-light' %>
+              </li>
+              <li>
+                <%= link_to "Se connecter", new_session_path, class:'text-light'%>
+              </li>
+            </ul>
+          </div>
+
+      <% end %>
+      </div>
+    </div>
+    <div class="container mt-1">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name %>"><%= msg %></div>
+      <% end %>
+      <%= yield %>
+      <%= debug session[:auth] %>
+    </div>
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>Petsy</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+9:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+10:        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+11:      </head>
+12:    
+13:      <body>
+14:        <div class="navbar bg-dark">
+15:          <div class="container">
+16:            <div class="navbar-header">
+17:              <%= link_to 'Petsy', root_path, class: 'navbar-brand text-light' %>
+18:            </div>
+19:            <% if user_signed_in? %>
+20:              <div>
+21:                <ul class="nav navbar-nav navbar-right">
+22:                  <li>
+23:                    <%= link_to "Se déconnecter", session_path, data: {turbo-method: :delete} ,class:'text-light'%>
+24:                  </li>
+25:                </ul>
+26:              </div>
+27:    
+28:            <% else %>
+29:              <div>
+30:                <ul class="nav navbar-nav navbar-right">
+31:                  <li>
+32:                    <%= link_to "S'inscrire", new_user_path, class:'link-light' %>
+33:                  </li>
+34:                  <li>
+35:                    <%= link_to "Se connecter", new_session_path, class:'text-light'%>
+36:                  </li>
+37:                </ul>
+38:              </div>
+39:    
+40:          <% end %>
+41:          </div>
+42:        </div>
+43:        <div class="container mt-1">
+44:          <% flash.each do |name, msg| %>
+45:            <div class="alert alert-<%= name %>"><%= msg %></div>
+46:          <% end %>
+47:          <%= yield %>
+48:          <%= debug session[:auth] %>
+49:        </div>
+50:      </body>
+51:    </html>
+  
+app/views/layouts/application.html.erb:23: syntax error, unexpected ':', expecting =>
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:58:11 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1488)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4781)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.2ms | Allocations: 13163)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"sessions"}, missing required keys: [:id]):
+    20:           <div>
+    21:             <ul class="nav navbar-nav navbar-right">
+    22:               <li>
+    23:                 <%= link_to "Se déconnecter", session_path, data: {turbo_method: :delete} ,class:'text-light'%>
+    24:               </li>
+    25:             </ul>
+    26:           </div>
+  
+app/views/layouts/application.html.erb:23
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:59:20 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1486)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3527)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.2ms | Allocations: 11638)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>Petsy</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <div class="navbar bg-dark">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to 'Petsy', root_path, class: 'navbar-brand text-light' %>
+        </div>
+        <% if user_signed_in? %>
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "Se déconnecter", session_path session[:auth]['id'], data: {turbo_method: :delete} ,class:'text-light'%>
+              </li>
+            </ul>
+          </div>
+
+        <% else %>
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "S'inscrire", new_user_path, class:'link-light' %>
+              </li>
+              <li>
+                <%= link_to "Se connecter", new_session_path, class:'text-light'%>
+              </li>
+            </ul>
+          </div>
+
+      <% end %>
+      </div>
+    </div>
+    <div class="container mt-1">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name %>"><%= msg %></div>
+      <% end %>
+      <%= yield %>
+      <%= debug session[:auth] %>
+    </div>
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>Petsy</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+9:        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+10:        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+11:      </head>
+12:    
+13:      <body>
+14:        <div class="navbar bg-dark">
+15:          <div class="container">
+16:            <div class="navbar-header">
+17:              <%= link_to 'Petsy', root_path, class: 'navbar-brand text-light' %>
+18:            </div>
+19:            <% if user_signed_in? %>
+20:              <div>
+21:                <ul class="nav navbar-nav navbar-right">
+22:                  <li>
+23:                    <%= link_to "Se déconnecter", session_path session[:auth]['id'], data: {turbo_method: :delete} ,class:'text-light'%>
+24:                  </li>
+25:                </ul>
+26:              </div>
+27:    
+28:            <% else %>
+29:              <div>
+30:                <ul class="nav navbar-nav navbar-right">
+31:                  <li>
+32:                    <%= link_to "S'inscrire", new_user_path, class:'link-light' %>
+33:                  </li>
+34:                  <li>
+35:                    <%= link_to "Se connecter", new_session_path, class:'text-light'%>
+36:                  </li>
+37:                </ul>
+38:              </div>
+39:    
+40:          <% end %>
+41:          </div>
+42:        </div>
+43:        <div class="container mt-1">
+44:          <% flash.each do |name, msg| %>
+45:            <div class="alert alert-<%= name %>"><%= msg %></div>
+46:          <% end %>
+47:          <%= yield %>
+48:          <%= debug session[:auth] %>
+49:        </div>
+50:      </body>
+51:    </html>
+  
+app/views/layouts/application.html.erb:23: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:59:36 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 1184)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1493)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4293)
+Completed 200 OK in 22ms (Views: 9.9ms | ActiveRecord: 2.4ms | Allocations: 12439)
+
+
+Started GET "/sessions/10" for 127.0.0.1 at 2024-01-16 23:59:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/10"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-16 23:59:50 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:41:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.8ms | Allocations: 528)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3220)
+Completed 200 OK in 17ms (Views: 9.5ms | ActiveRecord: 0.8ms | Allocations: 4950)
+
+
+Started GET "/sessions/10" for 127.0.0.1 at 2024-01-17 00:01:32 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/10"):
+  
+Started GET "/sessions/10" for 127.0.0.1 at 2024-01-17 00:02:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/sessions/10"):
+  
