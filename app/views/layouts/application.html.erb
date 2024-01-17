@@ -18,9 +18,11 @@
         </div>
         <% if user_signed_in? %>
           <div>
+            <div>
+            </div>
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <%= link_to "Se déconnecter", session_path(session[:auth]['id']), data: {turbo_method: :delete} ,class:'text-light'%>
+                <%= link_to "Se déconnecter", destroy_session_path, data: {turbo_method: :delete} ,class:'text-light'%>
               </li>
             </ul>
           </div>

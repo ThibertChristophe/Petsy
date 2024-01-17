@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :user_signed_in?
 
   def only_signed_in
-    return unless !session[:auth] || !session[:auth]["id"]
+    return unless !session[:auth] || !session[:auth]['id']
 
     flash[:danger] = "Vous n'avez pas les droits d'accéder à cette page"
     redirect_to :new
@@ -15,11 +15,11 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    return unless !session[:auth] || !session[:auth]["id"]
+    return unless !session[:auth] || !session[:auth]['id']
     return @user if @user
 
     # le find_by_ + champ renvoi nil et donc ne léve pas d'exception comme le .find
-    @user = User.find_by_id session[:auth]["id"]
+    @user = User.find_by_id session[:auth]['id']
     # @user = User.find session[:auth]["id"]
   end
 end

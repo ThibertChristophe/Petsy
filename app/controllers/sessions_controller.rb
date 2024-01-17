@@ -7,19 +7,19 @@ class SessionsController < ApplicationController
   def create
     params = user_params
     @user = User.where(username: params[:username],
-      confirm: true).or(User.where(email: params[:username],
-        confirm: true)).first
+                       confirm: true).or(User.where(email: params[:username],
+                                                    confirm: true)).first
     if @user && @user.authenticate(params[:password])
-      session[:auth] = {id: @user.id}
-      redirect_to profile_path, message: "Connexion reussie"
+      session[:auth] = { id: @user.id }
+      redirect_to profile_path, message: 'Connexion reussie'
     else
-      redirect_to new_session_path, message: "Identifiant incorrect"
+      redirect_to new_session_path, message: 'Identifiant incorrect'
     end
   end
 
   def destroy
-    @user.destroy
-    redirect_to root_path
+    session.destroy
+    redirect_to new_session_path, success: 'Vous êtes déconnecté'
   end
 
   private
