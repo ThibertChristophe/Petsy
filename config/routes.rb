@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   patch 'profile', to: 'users#update'
 
   resources :sessions, only: %i[create]
-  get 'login', to: 'sessions#new', as: :new_session
-  get 'logout', to: 'sessions#destroy', as: :destroy_session
+  get '/login', to: 'sessions#new', as: :new_session
+  get '/logout', to: 'sessions#destroy', as: :destroy_session
   resources :users, only: %i[new create edit destroy] do
     # va generer une route /:id/confirm
     member do
