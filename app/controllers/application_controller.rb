@@ -2,8 +2,13 @@ class ApplicationController < ActionController::Base
   # rend notre methode comme un helper qu on peut dorenavant appeler dans la view
   helper_method :current_user, :user_signed_in?
 
+  # on va considerer au depart que toute la web app est accessible si on est loggé
+  # on ira mettre du skip_before_action dans les autre controller ne necessitant pas d'etre loggé
+  before_action :only_signed_in
+
+  # Redirige vers la page d'inscription si on est pas loggé
   def only_signed_in
-    return unless !session[:auth] || !session[:auth]['id']
+    return if session[:auth] || session[:auth]['id']
 
     flash[:danger] = "Vous n'avez pas les droits d'accéder à cette page"
     redirect_to :new
@@ -13,6 +18,7 @@ class ApplicationController < ActionController::Base
     current_user.nil?
   end
 
+  # Renvoi le user loggé sinon nil
   def current_user
     return nil if !session[:auth] || !session[:auth]['id']
     return @user if @user

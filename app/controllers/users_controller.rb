@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[confirm]
 
+  # on defini les actions qui ne necessite pas d'etre loggé
+  # Pas besoin d'etre loggé pour se creer un nouveau user ou confirmer notre inscription
+  skip_before_action :only_signed_in, only: %i[new create confirm]
+
   def new
     @user = User.new
   end

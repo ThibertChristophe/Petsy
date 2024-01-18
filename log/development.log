@@ -9752,3 +9752,85 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 38ms (Views: 13.8ms | ActiveRecord: 6.1ms | Allocations: 11598)
 
 
+Started GET "/" for 127.0.0.1 at 2024-01-19 00:05:27 +0100
+  
+ArgumentError (Before process_action callback :only_signed_in? has not been defined):
+  
+app/controllers/users_controller.rb:6:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-01-19 00:05:36 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 1329)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2048)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4828)
+Completed 200 OK in 23ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 11198)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-19 00:05:37 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 675)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1072)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3350)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 3937)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-19 00:05:39 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 684)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1089)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3374)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 3969)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 00:05:39 +0100
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 982)
+
+
+  
+NoMethodError (undefined method `[]' for nil):
+  
+app/controllers/application_controller.rb:11:in `only_signed_in'
+Started GET "/login" for 127.0.0.1 at 2024-01-19 00:06:29 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 998)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3488)
+Completed 200 OK in 15ms (Views: 6.2ms | ActiveRecord: 2.8ms | Allocations: 10116)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 00:06:31 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 518)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 2796)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 3385)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-19 00:06:31 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.0ms | Allocations: 1259)
+  Rendered users/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1961)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 4245)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.0ms | Allocations: 5149)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 00:06:32 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 2793)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 3375)
+
+
