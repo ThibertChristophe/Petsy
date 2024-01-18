@@ -9631,3 +9631,124 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3090)
 
 
+Started GET "/" for 127.0.0.1 at 2024-01-18 22:33:50 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.6ms | Allocations: 1933)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2924)
+  Rendered layout layouts/application.html.erb (Duration: 95.7ms | Allocations: 51960)
+Completed 200 OK in 140ms (Views: 99.3ms | ActiveRecord: 5.2ms | Allocations: 77385)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 22:35:52 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 63.7ms | Allocations: 25180)
+  Rendered users/new.html.erb within layouts/application (Duration: 64.1ms | Allocations: 25287)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | Allocations: 27588)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.0ms | Allocations: 28178)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-18 22:35:53 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 675)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1072)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3352)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 3960)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-18 22:35:55 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1202)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 3194)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 4056)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-18 22:35:55 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 687)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1091)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3377)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3966)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 23:15:23 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 1337)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2058)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4826)
+Completed 200 OK in 21ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 11096)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-18 23:15:48 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 739)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-18 23:15:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1195)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3174)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 3976)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 23:15:49 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.1ms | Allocations: 673)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 778)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 3058)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 3643)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-18 23:15:50 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 631)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-18 23:15:50 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 514)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2487)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3067)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-18 23:15:52 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.9ms | Allocations: 682)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1079)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3353)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 3940)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-18 23:17:04 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.7ms | Allocations: 1342)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2356)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4846)
+Completed 200 OK in 38ms (Views: 13.8ms | ActiveRecord: 6.1ms | Allocations: 11598)
+
+
