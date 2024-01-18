@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # Controller qui permet de se créer un compte user et de confirmer notre compte via la reception d'un email
+
   before_action :set_user, only: %i[confirm]
 
   # on defini les actions qui ne necessite pas d'etre loggé
@@ -14,7 +16,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'Utilisateur créé avec succès, veuillez vérifier vos emails'
-      # envoi le mail
+      # envoi le mail de confirmation
       UserMailer.confirm(@user).deliver_now
       redirect_to root_path
     else

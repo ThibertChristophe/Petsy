@@ -9834,3 +9834,39 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 3375)
 
 
+Started POST "/sessions" for 127.0.0.1 at 2024-01-19 00:08:55 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 225ms (ActiveRecord: 4.9ms | Allocations: 9683)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 00:08:56 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:43:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.9ms | Allocations: 1190)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1794)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4608)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 7713)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-19 00:09:03 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 606)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 00:09:03 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2887)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3697)
+
+
