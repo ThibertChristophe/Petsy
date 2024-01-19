@@ -16,7 +16,7 @@
         <div class="navbar-header">
           <%= link_to 'Petsy', root_path, class: 'navbar-brand text-light' %>
         </div>
-        <% if !user_signed_in? %>
+        <% if user_signed_in? %>
           <div>
             <div>
             </div>

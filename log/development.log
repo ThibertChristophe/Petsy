@@ -9870,3 +9870,353 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3697)
 
 
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-19 23:30:30 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (7.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 18.0ms | Allocations: 1932)
+  Rendered users/new.html.erb within layouts/application (Duration: 23.3ms | Allocations: 2630)
+  Rendered layout layouts/application.html.erb (Duration: 205.4ms | Allocations: 52556)
+Completed 200 OK in 513ms (Views: 220.9ms | ActiveRecord: 8.4ms | Allocations: 80186)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-19 23:30:33 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.7ms | Allocations: 1676)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1778)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3779)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 4373)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:30:34 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2911)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 3794)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-19 23:30:35 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 669)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1066)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3344)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3946)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:30:36 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 500)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2778)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3366)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-19 23:30:38 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 222ms (ActiveRecord: 1.7ms | Allocations: 4643)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:30:38 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:45:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 533)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 747)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2776)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 5233)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-19 23:30:40 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 617)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:30:40 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 500)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2486)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3072)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-19 23:31:30 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.4ms | Allocations: 1971)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2962)
+  Rendered layout layouts/application.html.erb (Duration: 102.1ms | Allocations: 52606)
+Completed 200 OK in 155ms (Views: 107.1ms | ActiveRecord: 2.9ms | Allocations: 78007)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:31:33 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1934)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 3939)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4829)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-19 23:31:33 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 691)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1088)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3371)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3962)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:31:34 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 537)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2815)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3423)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-19 23:31:36 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 233ms (ActiveRecord: 0.5ms | Allocations: 4680)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:31:36 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+Redirected to 
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms | Allocations: 2544)
+
+
+  
+NoMethodError (undefined method `new_url' for an instance of UsersController):
+  
+app/controllers/application_controller.rb:14:in `only_signed_in'
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:32:02 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+Redirected to 
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 1787)
+
+
+  
+NoMethodError (undefined method `new_url' for an instance of UsersController):
+  
+app/controllers/application_controller.rb:14:in `only_signed_in'
+Started POST "/sessions" for 127.0.0.1 at 2024-01-19 23:32:06 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 213ms (ActiveRecord: 0.4ms | Allocations: 1636)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:32:06 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+Redirected to 
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 2061)
+
+
+  
+NoMethodError (undefined method `new_url' for an instance of UsersController):
+  
+app/controllers/application_controller.rb:14:in `only_signed_in'
+Started POST "/sessions" for 127.0.0.1 at 2024-01-19 23:33:09 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 218ms (ActiveRecord: 2.9ms | Allocations: 7378)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:33:10 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:45:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 1190)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1495)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4017)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 6754)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-19 23:33:45 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 628)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:33:45 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1199)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3198)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 4006)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-19 23:34:28 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"eqwe", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'eqwe' OR `users`.`email` = 'eqwe') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 10ms (ActiveRecord: 4.4ms | Allocations: 3237)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:34:28 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1288)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3777)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 8765)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-19 23:34:31 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 214ms (ActiveRecord: 0.4ms | Allocations: 1393)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:34:31 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:45:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 1127)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1711)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3727)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 6002)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-19 23:34:33 +0100
+Processing by SessionsController#destroy as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 631)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:34:33 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 534)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2520)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 3107)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:34:44 +0100
+Processing by UsersController#edit as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 965)
+
+
+  
+NoMethodError (undefined method `[]' for nil):
+  
+app/controllers/application_controller.rb:11:in `only_signed_in'
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:37:33 +0100
+Processing by UsersController#edit as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :only_signed_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 1370)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:37:33 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1328)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3822)
+Completed 200 OK in 19ms (Views: 7.1ms | ActiveRecord: 2.9ms | Allocations: 10461)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-19 23:37:41 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 223ms (ActiveRecord: 0.6ms | Allocations: 1932)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:37:42 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:45:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 1127)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1413)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3417)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 6687)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-19 23:37:43 +0100
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1376)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:37:43 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2805)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3392)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-19 23:37:48 +0100
+Processing by UsersController#edit as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :only_signed_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 954)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-19 23:37:48 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 541)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2821)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3411)
+
+

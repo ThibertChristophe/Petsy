@@ -14,7 +14,8 @@ class SessionsController < ApplicationController
     @user = User.where(username: params[:username],
                        confirm: true).or(User.where(email: params[:username],
                                                     confirm: true)).first
-    if @user && @user.authenticate(params[:password])
+    # if @user && @user.authenticate(params[:password])
+    if @user&.authenticate(params[:password])
       session[:auth] = { id: @user.id }
       redirect_to profile_path, message: 'Connexion reussie'
     else
