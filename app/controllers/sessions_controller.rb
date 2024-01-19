@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
   # Pas besoin d'etre loggé pour se creer une session, c'est la partie oú on va avoir le formulaire de "Se connecter"
   skip_before_action :only_signed_in, only: %i[new create]
 
+  # Seul les new et create sont accessible si on est pas log
+  before_action :only_signed_out, only: %i[new create]
+
   def new
     @user = User.new
   end

@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_path
   end
 
+  # Redirige vers la page de profile si on est loggé
+  def only_signed_out
+    redirect_to profile_path if user_signed_in?
+  end
+
   # va nous servir de savoir si le user est signed
   def user_signed_in?
     !current_user.nil?

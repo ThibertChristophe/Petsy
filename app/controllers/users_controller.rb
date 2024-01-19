@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   # Pas besoin d'etre loggé pour se creer un nouveau user ou confirmer notre inscription
   skip_before_action :only_signed_in, only: %i[new create confirm]
 
+  # Il faut etre log off pour acceder a new, create et confirm
+  before_action :only_signed_out, only: %i[new create confirm]
+
   def new
     @user = User.new
   end
