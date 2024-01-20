@@ -1,10 +1,17 @@
-   <%= form_with model: user, url: url, textbtn: textbtn, html: {class: 'form-horizontal'} do |form| %>
+   <%= form_with model: user, url: url, textbtn: textbtn, new: new, html: {class: 'form-horizontal'} do |form| %>
 
+     <% if !new %>
+      <div class="form-group">
+        <%= form.label :avatar, "Avatar", class: 'col-md-4 control-label' %>
+          <%= form.file_field :avatar, class: 'form-control' %>
+        <% user.errors.full_messages_for(:avatar).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+    <% end %>
       <div class="form-group">
         <%= form.label :username, "Nom d'utilisateur", class: 'col-md-4 control-label' %>
-        <div class="col-md-6">
           <%= form.text_field :username, class: 'form-control' %>
-        </div>
         <% user.errors.full_messages_for(:username).each do |message| %>
           <div class='text-danger'><%= message %></div>
         <% end %>
@@ -12,19 +19,16 @@
 
       <div class="form-group">
         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
-        <div class="col-md-6">
           <%= form.text_field :email, class: 'form-control' %>
-        </div>
         <% user.errors.full_messages_for(:email).each do |message| %>
           <div class='text-danger'><%= message %></div>
         <% end %>
       </div>
 
+      <% if new %>
       <div class="form-group">
         <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
-        <div class="col-md-6">
           <%= form.password_field :password, class: 'form-control' %>
-        </div>
         <% user.errors.full_messages_for(:password).each do |message| %>
           <div class='text-danger'><%= message %></div>
         <% end %>
@@ -32,17 +36,32 @@
 
       <div class="form-group">
         <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
-        <div class="col-md-6">
           <%= form.password_field :password_confirmation, class: 'form-control' %>
-        </div>
         <% user.errors.full_messages_for(:password_confirmation).each do |message| %>
           <div class='text-danger'><%= message %></div>
         <% end %>
       </div>
+    <% end %>
 
+    <% if !new %>
+      <div class="form-group">
+        <%= form.label :lastname, "Nom", class: 'col-md-4 control-label' %>
+          <%= form.text_field :lastname, class: 'form-control' %>
+        <% user.errors.full_messages_for(:lastname).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= form.label :firstname, "Prénom", class: 'col-md-4 control-label' %>
+          <%= form.text_field :firstname, class: 'form-control' %>
+        <% user.errors.full_messages_for(:firstname).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+    <% end %>
       <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-          <%= form.submit textbtn, class: 'btn btn-success' %>
+          <%= form.submit textbtn, class: 'btn btn-success mt-2' %>
         </div>
       </div>
     <% end %>

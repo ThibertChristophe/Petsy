@@ -48,6 +48,17 @@ class UsersController < ApplicationController
     @user = User.find session[:auth]['id']
   end
 
+  def update
+    @user = current_user
+
+    if @user.update user_params
+      flash[:success] = 'Profil modifié'
+      redirect_to profile_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   # Permet d eviter de repeter cette ligne, on va l utiliser dans le before_action
@@ -58,6 +69,6 @@ class UsersController < ApplicationController
 
   # Permet de valider les parametres
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :lastname, :firstname, :avatar)
   end
 end
