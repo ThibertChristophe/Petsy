@@ -2,9 +2,9 @@
 
      <% if !new %>
       <div class="form-group">
-        <%= form.label :avatar, "Avatar", class: 'col-md-4 control-label' %>
-          <%= form.file_field :avatar, class: 'form-control' %>
-        <% user.errors.full_messages_for(:avatar).each do |message| %>
+        <%= form.label :avatar_file, "Avatar", class: 'col-md-4 control-label' %>
+          <%= form.file_field :avatar_file, class: 'form-control' %>
+        <% user.errors.full_messages_for(:avatar_file).each do |message| %>
           <div class='text-danger'><%= message %></div>
         <% end %>
       </div>

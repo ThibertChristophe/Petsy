@@ -11409,3 +11409,511 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 15ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 4777)
 
 
+Started GET "/" for ::1 at 2024-01-20 21:58:11 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms | Allocations: 7791)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 21:58:11 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 1690)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1997)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4782)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 7183)
+
+
+Started GET "/" for ::1 at 2024-01-20 22:31:10 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 75ms (ActiveRecord: 8.8ms | Allocations: 32836)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:31:10 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.4ms | Allocations: 2302)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2791)
+  Rendered layout layouts/application.html.erb (Duration: 122.4ms | Allocations: 51665)
+Completed 200 OK in 134ms (Views: 126.1ms | ActiveRecord: 0.3ms | Allocations: 56781)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:31:15 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007fd4d17ef920 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-18872-bkh23z>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+[31mUnpermitted parameter: :avatar. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007fd4d17fef60>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007fd4d17ef920 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-18872-bkh23z>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier", "controller"=>"users", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 6.9ms | Allocations: 7759)
+
+
+  
+NameError (undefined local variable or method `attribute' for an instance of FileValidator):
+  
+app/validators/file_validator.rb:8:in `validate_each'
+app/controllers/users_controller.rb:55:in `update'
+Started PATCH "/profile" for ::1 at 2024-01-20 22:31:42 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06e03ae0b0 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-zgdase>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+[31mUnpermitted parameter: :avatar. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007f06e03b1a58>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06e03ae0b0 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-zgdase>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier", "controller"=>"users", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 4.2ms | Allocations: 35721)
+
+
+  
+NameError (undefined local variable or method `attribute' for an instance of FileValidator):
+  
+app/validators/file_validator.rb:8:in `validate_each'
+app/controllers/users_controller.rb:55:in `update'
+Started PATCH "/profile" for ::1 at 2024-01-20 22:32:57 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06e0c14510 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-pfux4n>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+[31mUnpermitted parameter: :avatar. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007f06ca505960>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06e0c14510 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-pfux4n>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier", "controller"=>"users", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.9ms | Allocations: 6326)
+
+
+  
+NameError (undefined local variable or method `attribute' for an instance of FileValidator):
+  
+app/validators/file_validator.rb:8:in `validate_each'
+app/controllers/users_controller.rb:55:in `update'
+Started PATCH "/profile" for ::1 at 2024-01-20 22:33:59 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06e0ca51a0 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-7gcn8g.png>, @content_type="image/png", @original_filename="touch.png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"touch.png\"\r\nContent-Type: image/png\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+[31mUnpermitted parameter: :avatar. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007f06ca62d040>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06e0ca51a0 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-7gcn8g.png>, @content_type="image/png", @original_filename="touch.png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"touch.png\"\r\nContent-Type: image/png\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier", "controller"=>"users", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 47ms (ActiveRecord: 4.3ms | Allocations: 14780)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:33:59 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | Allocations: 2186)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2800)
+  Rendered layout layouts/application.html.erb (Duration: 68.7ms | Allocations: 52268)
+Completed 200 OK in 73ms (Views: 70.3ms | ActiveRecord: 0.3ms | Allocations: 55154)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:34:11 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06c9d96cd8 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-toi3m2>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+[31mUnpermitted parameter: :avatar. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007f06ca3b2310>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06c9d96cd8 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-toi3m2>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier", "controller"=>"users", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms | Allocations: 5841)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:34:11 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.7ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.9ms | Allocations: 741)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2736)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 4197)
+
+
+Started GET "/" for ::1 at 2024-01-20 22:34:14 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms | Allocations: 1939)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:34:14 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 746)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3031)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 4754)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:34:18 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06e0a8bf90 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-3eqyr5>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+[31mUnpermitted parameter: :avatar. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x00007f06e1dbd028>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f06e0a8bf90 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-3eqyr5>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier", "controller"=>"users", "action"=>"update"} }[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 35ms (ActiveRecord: 2.9ms | Allocations: 6746)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:34:18 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1038)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3339)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 4794)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for ::1 at 2024-01-20 22:35:56 +0100
+Started GET "/" for 127.0.0.1 at 2024-01-20 22:35:56 +0100
+Processing by UsersController#edit as HTML
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.0ms | Allocations: 1954)
+  Rendered users/edit.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3561)
+  Rendered users/_form.html.erb (Duration: 10.8ms | Allocations: 2706)
+  Rendered users/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3794)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 8075)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 7655)
+Completed 200 OK in 39ms (Views: 23.0ms | ActiveRecord: 7.9ms | Allocations: 18020)
+
+
+Completed 200 OK in 39ms (Views: 24.5ms | ActiveRecord: 2.2ms | Allocations: 17939)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:36:03 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f06c9e0f2f0 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-1cyq4u>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.0ms | Allocations: 6247)
+
+
+  
+NoMethodError (undefined method `includes?' for an instance of Array):
+  
+app/validators/file_validator.rb:4:in `validate_each'
+app/controllers/users_controller.rb:55:in `update'
+Started PATCH "/profile" for ::1 at 2024-01-20 22:36:21 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f06cac766e0 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-y75qmg>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 19ms (ActiveRecord: 3.7ms | Allocations: 14447)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:36:21 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 1675)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1973)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4468)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 6578)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:36:26 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f06c9fcc098 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-32itkp>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 11ms (ActiveRecord: 1.3ms | Allocations: 4828)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:36:26 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.0ms | Allocations: 741)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2736)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 4460)
+
+
+Started GET "/" for ::1 at 2024-01-20 22:36:28 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms | Allocations: 1937)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:36:28 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1038)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3337)
+Completed 200 OK in 14ms (Views: 9.9ms | ActiveRecord: 0.5ms | Allocations: 4774)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:36:32 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 15ms (ActiveRecord: 1.8ms | Allocations: 6606)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:36:32 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.0ms | Allocations: 746)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3041)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 4788)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:36:36 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f06c9da17c8 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-khp1hs>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms | Allocations: 5444)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:36:36 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 741)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2736)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 4202)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:36:42 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f06cabd7db0 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-19096-cy8la.png>, @content_type="image/png", @original_filename="post-icon.png", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"post-icon.png\"\r\nContent-Type: image/png\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 12ms (ActiveRecord: 1.6ms | Allocations: 5430)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:36:42 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1038)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3326)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 5077)
+
+
+Started GET "/" for ::1 at 2024-01-20 22:39:02 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 4.2ms | Allocations: 30009)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:39:02 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.4ms | Allocations: 2302)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2796)
+  Rendered layout layouts/application.html.erb (Duration: 136.2ms | Allocations: 52699)
+Completed 200 OK in 147ms (Views: 139.4ms | ActiveRecord: 0.3ms | Allocations: 57181)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:39:07 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f27d8fe1648 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-20568-yzvay9>, @content_type="application/octet-stream", @original_filename="tok", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"tok\"\r\nContent-Type: application/octet-stream\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 16ms (ActiveRecord: 1.3ms | Allocations: 5970)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:39:07 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 741)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2741)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 4489)
+
+
+Started PATCH "/profile" for ::1 at 2024-01-20 22:39:17 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f27d4b9d770 @tempfile=#<Tempfile:/tmp/RackMultipart20240120-20568-rkl8bl.png>, @content_type="image/png", @original_filename="jump.png", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"jump.png\"\r\nContent-Type: image/png\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 14ms (ActiveRecord: 1.7ms | Allocations: 5171)
+
+
+Started GET "/profile" for ::1 at 2024-01-20 22:39:17 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 646)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1038)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3325)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 4801)
+
+

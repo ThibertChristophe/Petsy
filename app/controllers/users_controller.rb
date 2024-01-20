@@ -45,7 +45,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find session[:auth]['id']
+    # @user = User.find session[:auth]['id']
+    @user = current_user
   end
 
   def update
@@ -69,6 +70,7 @@ class UsersController < ApplicationController
 
   # Permet de valider les parametres
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :lastname, :firstname, :avatar)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :lastname, :firstname,
+                                 :avatar_file)
   end
 end
