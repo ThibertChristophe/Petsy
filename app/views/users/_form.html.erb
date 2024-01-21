@@ -1,6 +1,10 @@
    <%= form_with model: user, url: url, textbtn: textbtn, new: new, html: {class: 'form-horizontal'} do |form| %>
 
      <% if !new %>
+       <% if user.avatar %>
+         <p>OK</p>
+        <%= image_tag user.avatar_url %>
+       <% end %>
       <div class="form-group">
         <%= form.label :avatar_file, "Avatar", class: 'col-md-4 control-label' %>
           <%= form.file_field :avatar_file, class: 'form-control' %>
