@@ -4,7 +4,9 @@ class PasswordsController < ApplicationController
   # on active le fait que ce n'est accessible que si on est logoff
   before_action :only_signed_out
 
-  def new; end
+  def new
+    @user = User.new
+  end
 
   # Permet de lancer une demande de recuperation de mot de passe
   def create
@@ -16,7 +18,8 @@ class PasswordsController < ApplicationController
       UserMailer.password(@user).deliver_now
       redirect_to new_session_path, success: 'Email envoyé'
     else
-      redirect_to new_password_path, danger: 'Aucun email ne correspond'
+      flash[:danger] = 'Email invalide'
+      redirect_to new_password_path
     end
   end
 

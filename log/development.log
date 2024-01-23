@@ -13832,3 +13832,208 @@ Processing by PasswordsController#new as HTML
 Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4940)
 
 
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:20:48 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2305)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4797)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 6236)
+
+
+Started POST "/passwords/new" for 127.0.0.1 at 2024-01-23 23:21:13 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/passwords/new"):
+  
+Started POST "/passwords/new" for 127.0.0.1 at 2024-01-23 23:21:48 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/passwords/new"):
+  
+Started GET "/rails/info/routes?query=kkk" for 127.0.0.1 at 2024-01-23 23:22:12 +0100
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"kkk"}
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 20229)
+
+
+Started POST "/passwords/new" for 127.0.0.1 at 2024-01-23 23:23:00 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/passwords/new"):
+  
+Started POST "/passwords/new" for 127.0.0.1 at 2024-01-23 23:23:10 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/passwords/new"):
+  
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:23:54 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1428)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3914)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 5366)
+
+
+Started POST "/passwords" for 127.0.0.1 at 2024-01-23 23:23:57 +0100
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"rere@gmail.com", "commit"=>"Récupérer le mot de passe"}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms | Allocations: 1018)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/passwords_controller.rb:11:in `create'
+Started POST "/passwords" for 127.0.0.1 at 2024-01-23 23:27:35 +0100
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"rere@gmail.com", "commit"=>"Récupérer le mot de passe"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 1036)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/passwords_controller.rb:11:in `create'
+Started POST "/passwords" for 127.0.0.1 at 2024-01-23 23:27:37 +0100
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"rere@gmail.com", "commit"=>"Récupérer le mot de passe"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 694)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/passwords_controller.rb:11:in `create'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:28:08 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1169)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1561)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3290)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007f40c3b3a000>):
+    3: <div class="panel panel-default">
+    4:   <div class="panel-heading h5">Récupération de mot de passe</div>
+    5:   <div class="panel-body">
+    6:     <%= form_with model: user,url: passwords_path,  html: {class: 'form-horizontal'} do |form| %>
+    7: 
+    8:       <div class="form-group">
+    9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+  
+app/views/passwords/new.html.erb:6
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:28:17 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1513)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1910)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3637)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for an instance of Symbol):
+    3: <div class="panel panel-default">
+    4:   <div class="panel-heading h5">Récupération de mot de passe</div>
+    5:   <div class="panel-body">
+    6:     <%= form_with model: :user, url: passwords_path,  html: {class: 'form-horizontal'} do |form| %>
+    7: 
+    8:       <div class="form-group">
+    9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+  
+app/views/passwords/new.html.erb:6
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:28:29 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1718)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4204)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 5658)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:29:07 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 849)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3337)
+Completed 200 OK in 23ms (Views: 7.9ms | ActiveRecord: 3.3ms | Allocations: 10737)
+
+
+Started POST "/passwords" for 127.0.0.1 at 2024-01-23 23:29:16 +0100
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"rere@gmail.com"}, "commit"=>"Récupérer le mot de passe"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rere@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/passwords/new
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms | Allocations: 1666)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:29:16 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 250)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2528)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3300)
+
+
+Started POST "/passwords" for 127.0.0.1 at 2024-01-23 23:29:19 +0100
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>""}, "commit"=>"Récupérer le mot de passe"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/passwords/new
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 1379)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:29:19 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 250)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2236)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 3020)
+
+
+Started POST "/passwords" for 127.0.0.1 at 2024-01-23 23:30:00 +0100
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"rere@gmail.com"}, "commit"=>"Récupérer le mot de passe"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'rere@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/passwords/new
+Completed 302 Found in 8ms (ActiveRecord: 1.7ms | Allocations: 3790)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:30:00 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 544)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3033)
+Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 1.5ms | Allocations: 8619)
+
+
+Started POST "/passwords" for 127.0.0.1 at 2024-01-23 23:30:23 +0100
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ewe@g.co"}, "commit"=>"Récupérer le mot de passe"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'ewe@g.co' LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/passwords/new
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms | Allocations: 3494)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:30:23 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 544)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3033)
+Completed 200 OK in 14ms (Views: 5.7ms | ActiveRecord: 2.1ms | Allocations: 8578)
+
+
