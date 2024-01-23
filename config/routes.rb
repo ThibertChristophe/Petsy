@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#edit', as: :profile
   patch 'profile', to: 'users#update'
 
+  resources :passwords, only: %i[new create update edit]
   resources :sessions, only: %i[create]
   get '/login', to: 'sessions#new', as: :new_session
   get '/logout', to: 'sessions#destroy', as: :destroy_session

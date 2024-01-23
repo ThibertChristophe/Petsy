@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_secure_password
   has_secure_token :confirmation_token
+  has_secure_token :recover_password
 
   before_save :avatar_before_upload
   after_save :avatar_after_upload
@@ -10,7 +11,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
   validates :email, presence: true, uniqueness: { case_sensitive: false }, email: true
-  validates :avatar_file, file: { ext: %i[jpg png] }
+  validates :avatar_file, file: { ext: %i[jpg] }
 
   def avatar_path
     # public/users/id/avatar.jpg

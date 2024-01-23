@@ -13264,3 +13264,571 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 6713)
 
 
+Started GET "/" for 127.0.0.1 at 2024-01-23 21:45:13 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.7ms | Allocations: 2175)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2870)
+  Rendered layout layouts/application.html.erb (Duration: 78.0ms | Allocations: 52418)
+Completed 200 OK in 126ms (Views: 82.1ms | ActiveRecord: 4.4ms | Allocations: 80850)
+
+
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` /* loading for pp */ LIMIT 11[0m
+Started GET "/login" for 127.0.0.1 at 2024-01-23 21:46:02 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1048)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3046)
+Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 5127)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-23 21:46:06 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 228ms (ActiveRecord: 0.5ms | Allocations: 4657)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-23 21:46:06 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 856)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1077)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3407)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 5715)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-23 21:46:14 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.9ms | Allocations: 1809)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2117)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4608)
+Completed 200 OK in 30ms (Views: 8.9ms | ActiveRecord: 2.8ms | Allocations: 13102)
+
+
+Started PATCH "/profile" for 127.0.0.1 at 2024-01-23 21:46:48 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f4149023b68 @tempfile=#<Tempfile:/tmp/RackMultipart20240123-5870-5bswvq.png>, @content_type="image/png", @original_filename="touch.png", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"touch.png\"\r\nContent-Type: image/png\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.5ms | Allocations: 7267)
+
+
+  
+MiniMagick::Error (`magick mogrify -resize 150x150 -gravity Center -crop 150x150+0+0 /tmp/RackMultipart20240123-5870-5bswvq.png` failed with status: 1 and error:
+mogrify: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/746.
+):
+  
+app/models/user.rb:39:in `new'
+app/models/user.rb:39:in `avatar_after_upload'
+app/controllers/users_controller.rb:55:in `update'
+Started PATCH "/profile" for 127.0.0.1 at 2024-01-23 22:03:59 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f4149b31f50 @tempfile=#<Tempfile:/tmp/RackMultipart20240123-5870-e6te3j.png>, @content_type="image/png", @original_filename="Joystick.png", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"Joystick.png\"\r\nContent-Type: image/png\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.6ms | Allocations: 6010)
+
+
+  
+MiniMagick::Error (`magick mogrify -resize 150x150 -gravity Center -crop 150x150+0+0 /tmp/RackMultipart20240123-5870-e6te3j.png` failed with status: 1 and error:
+mogrify: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/746.
+):
+  
+app/models/user.rb:39:in `new'
+app/models/user.rb:39:in `avatar_after_upload'
+app/controllers/users_controller.rb:55:in `update'
+Started PATCH "/profile" for 127.0.0.1 at 2024-01-23 22:09:14 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f414920eba8 @tempfile=#<Tempfile:/tmp/RackMultipart20240123-5870-leygz6.png>, @content_type="image/png", @original_filename="Joystick.png", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"Joystick.png\"\r\nContent-Type: image/png\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.4ms | Allocations: 14778)
+
+
+  
+MiniMagick::Error (`magick mogrify -resize 150x150 -gravity Center -crop 150x150+0+0 /tmp/RackMultipart20240123-5870-leygz6.png` failed with status: 1 and error:
+mogrify: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/746.
+):
+  
+app/models/user.rb:39:in `new'
+app/models/user.rb:39:in `avatar_after_upload'
+app/controllers/users_controller.rb:55:in `update'
+Started PATCH "/profile" for 127.0.0.1 at 2024-01-23 22:09:20 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 22ms (ActiveRecord: 2.4ms | Allocations: 5553)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-23 22:09:20 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.7ms | Allocations: 1786)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2084)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4576)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 6657)
+
+
+Started PATCH "/profile" for 127.0.0.1 at 2024-01-23 22:09:25 +0100
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f4148498f28 @tempfile=#<Tempfile:/tmp/RackMultipart20240123-5870-ejhany.png>, @content_type="image/png", @original_filename="jump.png", @headers="Content-Disposition: form-data; name=\"user[avatar_file]\"; filename=\"jump.png\"\r\nContent-Type: image/png\r\n">, "username"=>"test", "email"=>"test@gmail.com", "lastname"=>"te", "firstname"=>"st"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.3ms | Allocations: 6236)
+
+
+  
+MiniMagick::Error (`magick mogrify -resize 150x150 -gravity Center -crop 150x150+0+0 /tmp/RackMultipart20240123-5870-ejhany.png` failed with status: 1 and error:
+mogrify: no decode delegate for this image format `PNG' @ error/constitute.c/ReadImage/746.
+):
+  
+app/models/user.rb:39:in `new'
+app/models/user.rb:39:in `avatar_after_upload'
+app/controllers/users_controller.rb:55:in `update'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb", "/home/chris/Ruby/Petsy/app/views/passwords/create.html.erb", "/home/chris/Ruby/Petsy/app/views/passwords/update.html.erb", "/home/chris/Ruby/Petsy/app/views/passwords/edit.html.erb"], :force_reload=>false}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('2660724183889824570', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+Migrating to AddRecoverPasswordToUsers (20240123212423)
+  [1m[35m (32.7ms)[0m  [1m[35mALTER TABLE `users` ADD `recover_password` varchar(255)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240123212423')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('2660724183889824570')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/user_mailer/password.text.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb", "/home/chris/Ruby/Petsy/app/views/user_mailer/password.text.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/logout" for 127.0.0.1 at 2024-01-23 23:05:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 17ms (ActiveRecord: 0.5ms | Allocations: 10264)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:05:26 +0100
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1110)
+
+
+  
+NoMethodError (undefined method `recover_password' for an instance of User):
+  
+app/controllers/sessions_controller.rb:12:in `new'
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:05:31 +0100
+Processing by SessionsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1022)
+
+
+  
+NoMethodError (undefined method `recover_password' for an instance of User):
+  
+app/controllers/sessions_controller.rb:12:in `new'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/sessions/new.html.erb"], :force_reload=>false}
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:08:41 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1167)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3651)
+Completed 200 OK in 21ms (Views: 7.0ms | ActiveRecord: 2.8ms | Allocations: 11914)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-23 23:08:47 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 213ms (ActiveRecord: 0.6ms | Allocations: 2017)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-23 23:08:48 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1744)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2035)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4039)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 6408)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-23 23:08:50 +0100
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms | Allocations: 1651)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:08:51 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 369)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2647)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 3429)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:09:06 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 4654)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 5371)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 6645)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007f41481a8f20>):
+     8:       <div class="form-group">
+     9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+    10:           <%= form.email_field :email, class: 'form-control' %>
+    11:         <% user.errors.full_messages_for(:email).each do |message| %>
+    12:           <div class='text-danger'><%= message %></div>
+    13:         <% end %>
+    14:       </div>
+  
+app/views/passwords/new.html.erb:11
+app/views/passwords/new.html.erb:6
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/sessions/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:09:31 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2178)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 2570)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4286)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007f4149221c30>):
+     8:       <div class="form-group">
+     9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+    10:           <%= form.email_field :email, class: 'form-control' %>
+    11:         <% user.errors.full_messages_for(:email).each do |message| %>
+    12:           <div class='text-danger'><%= message %></div>
+    13:         <% end %>
+    14:       </div>
+  
+app/views/passwords/new.html.erb:11
+app/views/passwords/new.html.erb:6
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:09:34 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1946)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2634)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3633)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007f4149221c30>):
+     8:       <div class="form-group">
+     9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+    10:           <%= form.email_field :email, class: 'form-control' %>
+    11:         <% user.errors.full_messages_for(:email).each do |message| %>
+    12:           <div class='text-danger'><%= message %></div>
+    13:         <% end %>
+    14:       </div>
+  
+app/views/passwords/new.html.erb:11
+app/views/passwords/new.html.erb:6
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:09:47 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 2173)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 2570)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 4288)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil):
+     8:       <div class="form-group">
+     9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+    10:           <%= form.email_field :email, class: 'form-control' %>
+    11:         <% @user.errors.full_messages_for(:email).each do |message| %>
+    12:           <div class='text-danger'><%= message %></div>
+    13:         <% end %>
+    14:       </div>
+  
+app/views/passwords/new.html.erb:11
+app/views/passwords/new.html.erb:6
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:12:31 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1225)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1617)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3338)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007f41480dbb88>):
+    3: <div class="panel panel-default">
+    4:   <div class="panel-heading">Récupération de mot de passe</div>
+    5:   <div class="panel-body">
+    6:     <%= form_with model: user,  html: {class: 'form-horizontal'} do |form| %>
+    7: 
+    8:       <div class="form-group">
+    9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+  
+app/views/passwords/new.html.erb:6
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:14:39 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2216)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2608)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4324)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for an instance of #<Class:0x00007f414813d0e0>):
+     8:       <div class="form-group">
+     9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+    10:           <%= form.email_field :email, class: 'form-control' %>
+    11:         <% user.errors.full_messages_for(:email).each do |message| %>
+    12:           <div class='text-danger'><%= message %></div>
+    13:         <% end %>
+    14:       </div>
+  
+app/views/passwords/new.html.erb:11
+app/views/passwords/new.html.erb:6
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:15:09 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 2210)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 2602)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4320)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for an instance of Symbol):
+     8:       <div class="form-group">
+     9:         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
+    10:           <%= form.email_field :email, class: 'form-control' %>
+    11:         <% :user.errors.full_messages_for(:email).each do |message| %>
+    12:           <div class='text-danger'><%= message %></div>
+    13:         <% end %>
+    14:       </div>
+  
+app/views/passwords/new.html.erb:11
+app/views/passwords/new.html.erb:6
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:17:41 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2341)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4833)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 6286)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-23 23:18:01 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 1545)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2251)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4536)
+Completed 200 OK in 24ms (Views: 9.2ms | ActiveRecord: 3.5ms | Allocations: 11503)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:18:02 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1081)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 3072)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 4189)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:18:03 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1247)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3525)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4242)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:18:12 +0100
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1989)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 4481)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 5925)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:18:20 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1993)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4485)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 5947)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/passwords/new.html.erb"], :force_reload=>false}
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:18:24 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1997)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4476)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 5930)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/sessions/new.html.erb"], :force_reload=>false}
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:19:03 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 872)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3356)
+Completed 200 OK in 14ms (Views: 4.9ms | ActiveRecord: 2.7ms | Allocations: 10763)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-23 23:19:04 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.8ms | Allocations: 1518)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2221)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 4226)
+Completed 200 OK in 24ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 5356)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:19:07 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2659)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 3445)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-23 23:19:09 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = '' OR `users`.`email` = '') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 12ms (ActiveRecord: 0.9ms | Allocations: 2137)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:19:09 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2352)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3169)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-23 23:19:10 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = '' OR `users`.`email` = '') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms | Allocations: 1869)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-23 23:19:10 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2644)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3432)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-23 23:19:11 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1957)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3951)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4940)
+
+

@@ -2,7 +2,6 @@
 
      <% if !new %>
        <% if user.avatar %>
-         <p>OK</p>
         <%= image_tag user.avatar_url %>
        <% end %>
       <div class="form-group">
@@ -23,7 +22,7 @@
 
       <div class="form-group">
         <%= form.label :email, "Email", class: 'col-md-4 control-label' %>
-          <%= form.text_field :email, class: 'form-control' %>
+          <%= form.email_field :email, class: 'form-control' %>
         <% user.errors.full_messages_for(:email).each do |message| %>
           <div class='text-danger'><%= message %></div>
         <% end %>

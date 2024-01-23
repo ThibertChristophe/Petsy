@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-
+    @user.recover_password = nil
     if @user.save
       flash[:success] = 'Utilisateur créé avec succès, veuillez vérifier vos emails'
       # envoi le mail de confirmation

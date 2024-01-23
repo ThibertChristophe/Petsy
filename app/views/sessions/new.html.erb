@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-  <div class="panel-heading">Se connecter</div>
+  <div class="panel-heading h5">Se connecter</div>
   <div class="panel-body">
     <%= form_with model: @user, url: sessions_path, html: {class: 'form-horizontal'} do |form| %>
 
@@ -26,6 +26,7 @@
       <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
           <%= form.submit 'Se connecter' , class: 'btn btn-success' %>
+          <%= link_to 'Mot de passe oublié', new_password_path, class: 'btn btn-primary' %>
         </div>
       </div>
     <% end %>
