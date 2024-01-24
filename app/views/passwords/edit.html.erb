@@ -1,2 +1,26 @@
-<h1>Passwords#edit</h1>
-<p>Find me in app/views/passwords/edit.html.erb</p>
+<h2>Modifier mon mot de passe</h2>
+
+<%= form_with model: @user,url: password_path(@user.id), html: {class: 'form-horizontal'} do |form| %>
+     <%= form.hidden_field :recover_password %>
+      <div class="form-group">
+        <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
+          <%= form.password_field :password, class: 'form-control' %>
+        <% @user.errors.full_messages_for(:password).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :password_confirmation, "Confirmer le mot de passe", class: 'col-md-4 control-label' %>
+          <%= form.password_field :password_confirmation, class: 'form-control' %>
+        <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+          <%= form.submit 'Confirmer', class: 'btn btn-success mt-2' %>
+        </div>
+      </div>
+    <% end %>
+

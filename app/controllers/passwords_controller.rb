@@ -23,7 +23,30 @@ class PasswordsController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    user_params = params.require(:user).permit(:password, :password_confirmation, :recover_password)
+    @user = User.find params[:id]
+    if @user.recover_password == user_params[:recover_password]
+      if @user.update user_params
+        @user.recover_password = nil
+        @user.save
+        session[:auth] = { id: @user.id }
+        flash[:success] = 'Mot de passe modifié'
+        redirect_to profile_path
+      else
+        flash[:danger] = 'Erreur de password'
+        render :edit
+      end
+    else
+      flash[:danger] = 'Token invalide'
+      render :edit
+    end
+  end
 
-  def edit; end
+  def edit
+    @user = User.find params[:id]
+    return if @user.recover_password == params[:token]
+
+    redirect_to new_password_path, danger: 'Invalide'
+  end
 end
