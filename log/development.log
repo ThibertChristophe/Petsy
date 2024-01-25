@@ -15920,3 +15920,248 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 6112)
 
 
+Started GET "/" for ::1 at 2024-01-24 23:09:58 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms | Allocations: 1958)
+
+
+Started GET "/profile" for ::1 at 2024-01-24 23:09:58 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | Allocations: 707)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 807)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3106)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 4553)
+
+
+Started GET "/logout" for ::1 at 2024-01-24 23:10:01 +0100
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1326)
+
+
+Started GET "/login" for ::1 at 2024-01-24 23:10:01 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 369)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2355)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3136)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-25 22:02:21 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.1ms | Allocations: 2271)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3263)
+  Rendered layout layouts/application.html.erb (Duration: 89.0ms | Allocations: 52505)
+Completed 200 OK in 137ms (Views: 92.7ms | ActiveRecord: 5.2ms | Allocations: 79247)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-25 22:02:46 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 804)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2800)
+Completed 200 OK in 15ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4907)
+
+
+Started GET "/passwords/new" for 127.0.0.1 at 2024-01-25 22:02:47 +0100
+Processing by PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/new.html.erb within layouts/application
+  Rendered passwords/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 484)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 2475)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 3572)
+
+
+Started POST "/passwords" for 127.0.0.1 at 2024-01-25 22:02:49 +0100
+Processing by PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com"}, "commit"=>"Récupérer le mot de passe"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'test@gmail.com' LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/passwords_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:17:in `create'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `users`.`updated_at` = '2024-01-25 21:02:49.986448', `users`.`recover_password` = 'Q17dPpPrYvJMZvMzSjUxvYpx' WHERE `users`.`id` = 10[0m
+  ↳ app/controllers/passwords_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/passwords_controller.rb:17:in `create'
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/password.text.erb within layouts/mailer
+  Rendered user_mailer/password.text.erb within layouts/mailer (Duration: 1.0ms | Allocations: 608)
+  Rendered layout layouts/mailer.text.erb (Duration: 2.2ms | Allocations: 1414)
+UserMailer#password: processed outbound mail in 13.1ms
+Delivered mail 65b2cc7a13a83_23513fc0765dd@Desktop-Chris.mail (191.5ms)
+Date: Thu, 25 Jan 2024 22:02:50 +0100
+From: from@example.com
+To: test@gmail.com
+Message-ID: <65b2cc7a13a83_23513fc0765dd@Desktop-Chris.mail>
+Subject: =?UTF-8?Q?Recup=C3=A9ration_de_mot_de_passe?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Bonjour test =
+
+
+Voici le lien pour votre r=C3=A9cup=C3=A9ration de mot de passe
+
+http://localhost:3000/passwords/10/edit?token=3DQ17dPpPrYvJMZvMzSjUxvYpx
+
+Merci
+
+
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 308ms (ActiveRecord: 12.8ms | Allocations: 33862)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-25 22:02:50 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 368)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 2364)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 3166)
+
+
+Started GET "/passwords/10/edit?token=[FILTERED]" for ::1 at 2024-01-25 22:02:56 +0100
+Processing by PasswordsController#edit as HTML
+  Parameters: {"token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:48:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering passwords/edit.html.erb within layouts/application
+  Rendered passwords/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 903)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2885)
+Completed 200 OK in 17ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 4570)
+
+
+Started PATCH "/passwords/10" for ::1 at 2024-01-25 22:03:03 +0100
+Processing by PasswordsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"recover_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Confirmer", "id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 2089)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/passwords_controller.rb:31:in `update'
+Started PATCH "/passwords/10" for ::1 at 2024-01-25 22:03:46 +0100
+Processing by PasswordsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"recover_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Confirmer", "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.5ms | Allocations: 8668)
+
+
+  
+NoMethodError (undefined method `assign_attribute=' for an instance of User):
+  
+app/controllers/passwords_controller.rb:30:in `update'
+Started PATCH "/passwords/10" for ::1 at 2024-01-25 22:04:20 +0100
+Processing by PasswordsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"recover_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Confirmer", "id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 2.8ms | Allocations: 8316)
+
+
+  
+NoMethodError (undefined method `assign_attributes=' for an instance of User):
+  
+app/controllers/passwords_controller.rb:30:in `update'
+Started PATCH "/passwords/10" for ::1 at 2024-01-25 22:05:31 +0100
+Processing by PasswordsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"recover_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Confirmer", "id"=>"10"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 2055)
+
+
+  
+NoMethodError (undefined method `assign_attributes=' for an instance of User):
+  
+app/controllers/passwords_controller.rb:30:in `update'
+Started PATCH "/passwords/10" for ::1 at 2024-01-25 22:05:37 +0100
+Processing by PasswordsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"recover_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Confirmer", "id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms | Allocations: 2060)
+
+
+  
+NoMethodError (undefined method `assign_attributes=' for an instance of User):
+  
+app/controllers/passwords_controller.rb:30:in `update'
+Started PATCH "/passwords/10" for ::1 at 2024-01-25 22:07:19 +0100
+Processing by PasswordsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"recover_password"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Confirmer", "id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:28:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:32:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/passwords_controller.rb:33:in `update'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:33:in `update'
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@gmail.com' AND `users`.`id` != 10 LIMIT 1[0m
+  ↳ app/controllers/passwords_controller.rb:33:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`password_digest` = '$2a$12$Gu4mvnaR1It54WXkO7iOC.b0UXCh7b/wQTjCPVaqLoWKABiGIF4k.', `users`.`updated_at` = '2024-01-25 21:07:19.559035', `users`.`recover_password` = NULL WHERE `users`.`id` = 10[0m
+  ↳ app/controllers/passwords_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/passwords_controller.rb:33:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 235ms (ActiveRecord: 10.6ms | Allocations: 14474)
+
+
+Started GET "/profile" for ::1 at 2024-01-25 22:07:19 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 1917)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2225)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4740)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 7043)
+
+
+Started GET "/logout" for ::1 at 2024-01-25 22:07:27 +0100
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms | Allocations: 1739)
+
+
+Started GET "/login" for ::1 at 2024-01-25 22:07:27 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1085)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3098)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4091)
+
+

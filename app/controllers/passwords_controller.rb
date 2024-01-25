@@ -27,8 +27,9 @@ class PasswordsController < ApplicationController
     user_params = params.require(:user).permit(:password, :password_confirmation, :recover_password)
     @user = User.find params[:id]
     if @user.recover_password == user_params[:recover_password]
-      if @user.update user_params
-        @user.recover_password = nil
+      @user.assign_attributes({ password: user_params[:password],
+                                password_confirmation: user_params[:password_confirmation], recover_password: nil })
+      if @user.valid?
         @user.save
         session[:auth] = { id: @user.id }
         flash[:success] = 'Mot de passe modifié'
