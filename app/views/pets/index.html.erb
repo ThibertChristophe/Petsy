@@ -1,0 +1,33 @@
+<% content_for :content do %>
+  <h1>Mes animaux</h1>
+  <p class="text-right">
+    <%= link_to 'Ajouter un animal', new_pet_path, class: 'btn btn-primary'%>
+  </p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Avatar</th>
+        <th>Nom</th>
+        <th>Sexe</th>
+        <th>Age</th>
+        <th>Espece</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pets.each do |pet| %>
+        <tr>
+          <td></td>
+          <td><%= pet.name %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= render template: 'layouts/profile' %>

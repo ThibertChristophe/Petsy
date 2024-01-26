@@ -23,6 +23,7 @@ class PasswordsController < ApplicationController
     end
   end
 
+  # Redefini le mot de passe
   def update
     user_params = params.require(:user).permit(:password, :password_confirmation, :recover_password)
     @user = User.find params[:id]
@@ -44,10 +45,12 @@ class PasswordsController < ApplicationController
     end
   end
 
+  # Arrivee sur le page de redefinition de mot de passe
   def edit
     @user = User.find params[:id]
-    return if @user.recover_password == params[:token]
+    return if @user.recover_password == params[:token] && !params[:token].nil?
 
-    redirect_to new_password_path, danger: 'Invalide'
+    flash[:danger] = 'Accès refusé'
+    redirect_to new_password_path
   end
 end
