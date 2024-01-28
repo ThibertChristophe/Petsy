@@ -14,8 +14,7 @@ class PetsController < ApplicationController
       flash[:success] = 'Animal ajouté'
       redirect_to pets_path
     else
-      flash[:danger] = 'Error'
-      redirect_to new_pet_path
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -23,7 +22,9 @@ class PetsController < ApplicationController
 
   def destroy; end
 
-  def edit; end
+  def edit
+    @pet = current_user.pets.find(params[:id])
+  end
 
   private
 

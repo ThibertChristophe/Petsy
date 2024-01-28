@@ -2,7 +2,7 @@ class Pet < ApplicationRecord
   belongs_to :user
   belongs_to :species
 
-  validates :name, :gender, :birthday, presence: true
+  validates :name, :gender, :birthday, presence: { message: 'obligatoire' }
   validates :gender, format: { with: /\A(M|F)\z/ }
   validate :birthday_not_future
 

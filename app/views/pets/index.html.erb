@@ -20,10 +20,10 @@
         <tr>
           <td></td>
           <td><%= pet.name %></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td><%= pet.gender %></td>
+          <td><%= pet.birthday %></td>
+          <td><%= pet.species.name %></td>
+          <td><%= link_to 'Modifier', edit_pet_path(pet.id), class: 'btn btn-primary'%></td>
         </tr>
       <% end %>
     </tbody>
