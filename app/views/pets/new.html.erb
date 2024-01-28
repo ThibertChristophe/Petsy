@@ -1,2 +1,12 @@
-<h1>Pets#new</h1>
-<p>Find me in app/views/pets/new.html.erb</p>
+<% content_for :content do %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Créer un animal</h2>
+  </div>
+  <div class="panel-body">
+    <%= render 'form', pet: @pet %>
+  </div>
+</div>
+<% end %>
+
+<%= render template: 'layouts/profile' %>
