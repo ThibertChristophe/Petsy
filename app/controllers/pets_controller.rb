@@ -18,7 +18,16 @@ class PetsController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    @pet = current_user.pets.find(params[:id])
+
+    if @pet.update pet_param
+      flash[:success] = 'Animal modifié'
+      redirect_to pets_path
+    else
+      render :edit
+    end
+  end
 
   def destroy; end
 

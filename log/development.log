@@ -18394,3 +18394,839 @@ Processing by PetsController#edit as HTML
 Completed 200 OK in 33ms (Views: 10.1ms | ActiveRecord: 5.5ms | Allocations: 22794)
 
 
+Started GET "/" for 127.0.0.1 at 2024-01-29 21:08:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (9.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 19.0ms | Allocations: 2271)
+  Rendered users/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 3263)
+  Rendered layout layouts/application.html.erb (Duration: 156.5ms | Allocations: 54110)
+Completed 200 OK in 233ms (Views: 163.3ms | ActiveRecord: 7.7ms | Allocations: 81601)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-29 21:11:23 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 804)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2810)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 4936)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-29 21:11:26 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 226ms (ActiveRecord: 3.2ms | Allocations: 4962)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 21:11:26 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 855)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1069)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3093)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 5425)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 21:11:31 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (1.7ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.8ms | Allocations: 474)
+  Rendered pets/index.html.erb within layouts/application (Duration: 41.1ms | Allocations: 18694)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 21013)
+Completed 200 OK in 84ms (Views: 39.2ms | ActiveRecord: 9.1ms | Allocations: 26137)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-29 22:35:12 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:26:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.4ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 36.6ms | Allocations: 23049)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 39.6ms | Allocations: 24116)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 26411)
+Completed 200 OK in 82ms (Views: 46.0ms | ActiveRecord: 6.0ms | Allocations: 29675)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/_form.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/new.html.erb"], :force_reload=>false}
+Started GET "/pets/new" for 127.0.0.1 at 2024-01-29 22:36:58 +0100
+Processing by PetsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/_form.html.erb (Duration: 3.6ms | Allocations: 2042)
+  Rendered pets/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2680)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3369)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 9.4ms | Allocations: 18789)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `text' for an instance of #<Class:0x00007f1fe26f38e0>):
+    1:    <%= form_with model: pet, btn_lib: text, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :name, "Nom", class: 'col-md-4 control-label' %>
+  
+app/views/pets/_form.html.erb:1
+app/views/pets/new.html.erb:7
+app/views/pets/new.html.erb:1
+Started GET "/pets/new" for 127.0.0.1 at 2024-01-29 22:37:58 +0100
+Processing by PetsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/_form.html.erb (Duration: 1.2ms | Allocations: 1205)
+  Rendered pets/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1580)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2268)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms | Allocations: 4512)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `text' for an instance of #<Class:0x00007f1fe26f38e0>):
+    1:    <%= form_with model: pet, btn_lib: text, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :name, "Nom", class: 'col-md-4 control-label' %>
+  
+app/views/pets/_form.html.erb:1
+app/views/pets/new.html.erb:7
+app/views/pets/new.html.erb:1
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/_form.html.erb"], :force_reload=>false}
+Started GET "/pets/new" for 127.0.0.1 at 2024-01-29 22:39:09 +0100
+Processing by PetsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  Rendered pets/_form.html.erb (Duration: 2.5ms | Allocations: 1673)
+  Rendered pets/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2305)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2994)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 6.7ms | Allocations: 17727)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `textBtn' for an instance of #<Class:0x00007f1fe2a53d50>):
+    1:    <%= form_with model: pet, btn_lib: textBtn, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:       <div class="form-group">
+    4:         <%= form.label :name, "Nom", class: 'col-md-4 control-label' %>
+  
+app/views/pets/_form.html.erb:1
+app/views/pets/new.html.erb:7
+app/views/pets/new.html.erb:1
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/_form.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/new.html.erb"], :force_reload=>false}
+Started GET "/pets/new" for 127.0.0.1 at 2024-01-29 22:41:18 +0100
+Processing by PetsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.3ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 8.4ms | Allocations: 3431)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.7ms | Allocations: 480)
+  Rendered pets/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 5001)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 7491)
+Completed 200 OK in 41ms (Views: 14.8ms | ActiveRecord: 6.9ms | Allocations: 22245)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/edit.html.erb"], :force_reload=>false}
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:41:46 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.4ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.8ms | Allocations: 471)
+  Rendered pets/index.html.erb within layouts/application (Duration: 22.5ms | Allocations: 12141)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 14937)
+Completed 200 OK in 52ms (Views: 24.6ms | ActiveRecord: 10.3ms | Allocations: 25934)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-29 22:41:47 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:26:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.3ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 4.1ms | Allocations: 2978)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3739)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5729)
+Completed 200 OK in 20ms (Views: 12.8ms | ActiveRecord: 1.0ms | Allocations: 8559)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:41:49 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.4ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered pets/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2492)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4780)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 1.3ms | Allocations: 6242)
+
+
+Started GET "/pets/new" for 127.0.0.1 at 2024-01-29 22:41:51 +0100
+Processing by PetsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.3ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 3.6ms | Allocations: 2012)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 39)
+  Rendered pets/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2702)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4695)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 0.8ms | Allocations: 6715)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:41:53 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3081)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 5368)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 1.0ms | Allocations: 7147)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-29 22:41:56 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:26:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.4ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 6.6ms | Allocations: 2014)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2524)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4513)
+Completed 200 OK in 24ms (Views: 13.1ms | ActiveRecord: 1.5ms | Allocations: 7242)
+
+
+Started PATCH "/pets/1" for 127.0.0.1 at 2024-01-29 22:42:00 +0100
+Processing by PetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pet"=>{"name"=>"Pika", "gender"=>"M", "species_id"=>"1", "birthday(1i)"=>"2024", "birthday(2i)"=>"1", "birthday(3i)"=>"28"}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/update.html.erb within layouts/application
+  Rendered pets/update.html.erb within layouts/application (Duration: 0.5ms | Allocations: 108)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2103)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 3355)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-29 22:42:03 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 2113)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 22:42:03 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 1757)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2045)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4057)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 6023)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:42:06 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 2482)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4477)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 1.0ms | Allocations: 5975)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-29 22:42:12 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:26:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.2ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 4.5ms | Allocations: 2311)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 38)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3123)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5404)
+Completed 200 OK in 18ms (Views: 11.3ms | ActiveRecord: 0.9ms | Allocations: 8115)
+
+
+Started PATCH "/pets/1" for 127.0.0.1 at 2024-01-29 22:44:02 +0100
+Processing by PetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pet"=>{"name"=>"Pika", "gender"=>"M", "species_id"=>"1", "birthday(1i)"=>"2024", "birthday(2i)"=>"1", "birthday(3i)"=>"28"}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mPet Update (4.0ms)[0m  [1m[33mUPDATE `pets` SET `pets`.`name` = 'Pika', `pets`.`updated_at` = '2024-01-29 21:44:02.820687' WHERE `pets`.`id` = 1[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+Redirected to http://127.0.0.1:3000/pets
+Completed 302 Found in 40ms (ActiveRecord: 15.1ms | Allocations: 19507)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:44:02 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.7ms | Allocations: 476)
+  Rendered pets/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 8147)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 10941)
+Completed 200 OK in 19ms (Views: 14.2ms | ActiveRecord: 2.7ms | Allocations: 13098)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-29 22:44:10 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:35:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.4ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 10.3ms | Allocations: 2677)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3730)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 5738)
+Completed 200 OK in 28ms (Views: 18.2ms | ActiveRecord: 1.5ms | Allocations: 8231)
+
+
+Started PATCH "/pets/1" for 127.0.0.1 at 2024-01-29 22:44:14 +0100
+Processing by PetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pet"=>{"name"=>"Pika", "gender"=>"F", "species_id"=>"1", "birthday(1i)"=>"2024", "birthday(2i)"=>"1", "birthday(3i)"=>"28"}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mPet Update (0.5ms)[0m  [1m[33mUPDATE `pets` SET `pets`.`gender` = 'F', `pets`.`updated_at` = '2024-01-29 21:44:14.712592' WHERE `pets`.`id` = 1[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+Redirected to http://127.0.0.1:3000/pets
+Completed 302 Found in 26ms (ActiveRecord: 7.5ms | Allocations: 5900)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:44:14 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.6ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered pets/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3076)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5085)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 1.6ms | Allocations: 6578)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-29 22:44:16 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:35:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.3ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 3.3ms | Allocations: 2014)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2524)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4513)
+Completed 200 OK in 14ms (Views: 8.0ms | ActiveRecord: 1.0ms | Allocations: 6950)
+
+
+Started PATCH "/pets/1" for 127.0.0.1 at 2024-01-29 22:44:18 +0100
+Processing by PetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pet"=>{"name"=>"Pika", "gender"=>"M", "species_id"=>"1", "birthday(1i)"=>"2024", "birthday(2i)"=>"1", "birthday(3i)"=>"28"}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mPet Update (0.6ms)[0m  [1m[33mUPDATE `pets` SET `pets`.`gender` = 'M', `pets`.`updated_at` = '2024-01-29 21:44:18.197049' WHERE `pets`.`id` = 1[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+Redirected to http://127.0.0.1:3000/pets
+Completed 302 Found in 20ms (ActiveRecord: 8.6ms | Allocations: 5572)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:44:18 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2190)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4187)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.9ms | Allocations: 5675)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-29 22:44:20 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:35:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.3ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 4.2ms | Allocations: 2014)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2826)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5121)
+Completed 200 OK in 20ms (Views: 10.7ms | ActiveRecord: 1.2ms | Allocations: 7562)
+
+
+Started PATCH "/pets/1" for 127.0.0.1 at 2024-01-29 22:44:32 +0100
+Processing by PetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pet"=>{"name"=>"Pika", "gender"=>"M", "species_id"=>"1", "birthday(1i)"=>"2019", "birthday(2i)"=>"1", "birthday(3i)"=>"28"}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mPet Update (0.3ms)[0m  [1m[33mUPDATE `pets` SET `pets`.`birthday` = '2019-01-28', `pets`.`updated_at` = '2024-01-29 21:44:32.286621' WHERE `pets`.`id` = 1[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+Redirected to http://127.0.0.1:3000/pets
+Completed 302 Found in 20ms (ActiveRecord: 9.4ms | Allocations: 5000)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:44:32 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2487)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4491)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 5986)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-29 22:44:34 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:35:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.5ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 6.2ms | Allocations: 2603)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 38)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3415)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5702)
+Completed 200 OK in 19ms (Views: 11.6ms | ActiveRecord: 1.2ms | Allocations: 8401)
+
+
+Started PATCH "/pets/1" for 127.0.0.1 at 2024-01-29 22:44:36 +0100
+Processing by PetsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pet"=>{"name"=>"Pika", "gender"=>"M", "species_id"=>"1", "birthday(1i)"=>"2019", "birthday(2i)"=>"9", "birthday(3i)"=>"28"}, "commit"=>"Modifier", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:22:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mPet Update (1.5ms)[0m  [1m[33mUPDATE `pets` SET `pets`.`birthday` = '2019-09-28', `pets`.`updated_at` = '2024-01-29 21:44:36.581198' WHERE `pets`.`id` = 1[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pets_controller.rb:24:in `update'
+Redirected to http://127.0.0.1:3000/pets
+Completed 302 Found in 48ms (ActiveRecord: 14.6ms | Allocations: 6478)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:44:36 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.5ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 43)
+  Rendered pets/index.html.erb within layouts/application (Duration: 12.9ms | Allocations: 2784)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 5086)
+Completed 200 OK in 39ms (Views: 18.0ms | ActiveRecord: 2.1ms | Allocations: 6562)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/profile.html.erb"], :force_reload=>false}
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:45:15 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.9ms | Allocations: 512)
+  Rendered pets/index.html.erb within layouts/application (Duration: 22.3ms | Allocations: 11885)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 14389)
+Completed 200 OK in 52ms (Views: 24.2ms | ActiveRecord: 10.1ms | Allocations: 25364)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/profile.html.erb"], :force_reload=>false}
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:45:39 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.8ms | Allocations: 517)
+  Rendered pets/index.html.erb within layouts/application (Duration: 25.2ms | Allocations: 12506)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 15302)
+Completed 200 OK in 55ms (Views: 28.4ms | ActiveRecord: 9.5ms | Allocations: 26290)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 22:45:41 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 1790)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2078)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4076)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 5860)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-29 22:45:49 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 1.0ms | Allocations: 1660)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 22:45:49 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.1ms | Allocations: 707)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1099)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3384)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 5140)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:45:51 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2503)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4497)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 1.4ms | Allocations: 6274)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-29 22:46:47 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 3.1ms | Allocations: 8815)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 22:46:48 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | Allocations: 1807)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2114)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4894)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 7024)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:46:52 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.9ms | Allocations: 517)
+  Rendered pets/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 11881)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 13908)
+Completed 200 OK in 36ms (Views: 21.4ms | ActiveRecord: 5.6ms | Allocations: 17737)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 22:47:43 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.9ms | Allocations: 1806)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.7ms | Allocations: 522)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3460)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 6235)
+Completed 200 OK in 23ms (Views: 8.5ms | ActiveRecord: 3.4ms | Allocations: 15487)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:47:45 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 58)
+  Rendered pets/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 11940)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 13967)
+Completed 200 OK in 37ms (Views: 23.1ms | ActiveRecord: 5.9ms | Allocations: 17508)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 22:47:46 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.9ms | Allocations: 707)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1855)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4140)
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 0.6ms | Allocations: 5931)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:47:47 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (2.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.5ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 63)
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2503)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 4498)
+Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 3.3ms | Allocations: 6275)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 22:47:47 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 707)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1563)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3848)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 5338)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:47:48 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.5ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 63)
+  Rendered pets/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2507)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4515)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 1.3ms | Allocations: 5998)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-29 22:47:49 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 707)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1855)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4154)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 5629)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-29 22:47:50 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.6ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 63)
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3101)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 5387)
+Completed 200 OK in 23ms (Views: 15.8ms | ActiveRecord: 2.0ms | Allocations: 7156)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/confirm.html.erb"], :force_reload=>false}
