@@ -21,9 +21,11 @@
           <td></td>
           <td><%= pet.name %></td>
           <td><%= pet.gender %></td>
-          <td><%= pet.birthday %></td>
+          <td><%= pet.age %> ans</td>
           <td><%= pet.species.name %></td>
-          <td><%= link_to 'Modifier', edit_pet_path(pet.id), class: 'btn btn-primary'%></td>
+          <td><%= link_to 'Voir', pet_path(pet), class: 'btn btn-default'%>
+        <%= link_to 'Modifier', edit_pet_path(pet), class: 'btn btn-primary'%>
+        <%= link_to 'Supprimer', pet_path(pet), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ?"}, class: 'btn btn-danger'%></td>
         </tr>
       <% end %>
     </tbody>

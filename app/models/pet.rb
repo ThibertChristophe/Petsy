@@ -11,4 +11,8 @@ class Pet < ApplicationRecord
 
     errors.add :birthday, 'ne peut être dans le futur'
   end
+
+  def age
+    Time.now.year - birthday.year
+  end
 end
