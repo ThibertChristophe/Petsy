@@ -20059,3 +20059,1185 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4256)
 
 
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:39:58 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2827)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3675)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-30 21:40:01 +0100
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 312ms (ActiveRecord: 12.2ms | Allocations: 4719)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:40:02 +0100
+Processing by UsersController#edit as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 855)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.8ms | Allocations: 510)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2454)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4948)
+Completed 200 OK in 15ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 7631)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:40:03 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (2.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered pets/index.html.erb within layouts/application (Duration: 42.3ms | Allocations: 18302)
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | Allocations: 20493)
+Completed 200 OK in 60ms (Views: 38.7ms | ActiveRecord: 9.5ms | Allocations: 25318)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-30 21:40:04 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:42:in `set_pet'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.8ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 23.4ms | Allocations: 3499)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.8ms | Allocations: 58)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 30.7ms | Allocations: 4578)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 7024)
+Completed 200 OK in 59ms (Views: 42.1ms | ActiveRecord: 2.3ms | Allocations: 9350)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:40:10 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.7ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3204)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 5665)
+Completed 200 OK in 18ms (Views: 11.3ms | ActiveRecord: 1.8ms | Allocations: 7157)
+
+
+Started GET "/pets/1" for 127.0.0.1 at 2024-01-30 21:40:11 +0100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:42:in `set_pet'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2585)
+Completed 200 OK in 21ms (Views: 10.2ms | ActiveRecord: 1.3ms | Allocations: 5391)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/_form.html.erb"], :force_reload=>false}
+Started GET "/pets/1" for 127.0.0.1 at 2024-01-30 21:41:53 +0100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:42:in `set_pet'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 405)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 20356)
+Completed 200 OK in 44ms (Views: 18.6ms | ActiveRecord: 5.3ms | Allocations: 35789)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-30 21:41:55 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:42:in `set_pet'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.2ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 5.6ms | Allocations: 3342)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.7ms | Allocations: 522)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 7.9ms | Allocations: 4665)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 24612)
+Completed 200 OK in 64ms (Views: 26.5ms | ActiveRecord: 7.6ms | Allocations: 41511)
+
+
+Started GET "/pets/new" for 127.0.0.1 at 2024-01-30 21:41:57 +0100
+Processing by PetsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.5ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 4.6ms | Allocations: 2109)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered pets/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3412)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 5866)
+Completed 200 OK in 24ms (Views: 13.1ms | ActiveRecord: 1.6ms | Allocations: 7950)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/_form.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/pets/new.html.erb", "/home/chris/Ruby/Petsy/app/views/pets/edit.html.erb"], :force_reload=>false}
+Started GET "/pets/new" for 127.0.0.1 at 2024-01-30 21:42:28 +0100
+Processing by PetsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.2ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 5.2ms | Allocations: 3332)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.8ms | Allocations: 522)
+  Rendered pets/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 4647)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 24546)
+Completed 200 OK in 42ms (Views: 19.3ms | ActiveRecord: 4.9ms | Allocations: 39323)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-30 21:42:31 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:42:in `set_pet'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.1ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 6.2ms | Allocations: 3339)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.9ms | Allocations: 517)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 9.0ms | Allocations: 4663)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 24848)
+Completed 200 OK in 66ms (Views: 23.1ms | ActiveRecord: 10.9ms | Allocations: 42055)
+
+
+Started GET "/pets/1" for 127.0.0.1 at 2024-01-30 21:42:33 +0100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:42:in `set_pet'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2573)
+Completed 200 OK in 21ms (Views: 6.5ms | ActiveRecord: 1.4ms | Allocations: 5995)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:43:49 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:43:49 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.8ms | Allocations: 514)
+  Rendered pets/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 12004)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 32210)
+Completed 200 OK in 51ms (Views: 32.1ms | ActiveRecord: 6.9ms | Allocations: 43173)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:43:51 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:43:51 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2288)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4468)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.7ms | Allocations: 5940)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:43:53 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms | Allocations: 1807)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:43:53 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.6ms | Allocations: 2203)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2548)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3234)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 4900)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `textbtn' for an instance of #<Class:0x00007f3647f61600>):
+    1:    <%= form_with model: user, url: url, textbtn: textbtn, new: new, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:      <% if !new %>
+    4:        <% if user.avatar %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:3
+app/views/users/edit.html.erb:1
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:44:07 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 2.6ms | Allocations: 8824)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:44:07 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 2190)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2552)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3239)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 5342)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `textbtn' for an instance of #<Class:0x00007f3647f3aaa0>):
+    1:    <%= form_with model: user, url: url, textbtn: textbtn, new: new, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:      <% if !new %>
+    4:        <% if user.avatar %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:3
+app/views/users/edit.html.erb:1
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:44:51 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 1809)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.9ms | Allocations: 521)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3164)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 23349)
+Completed 200 OK in 41ms (Views: 26.1ms | ActiveRecord: 3.4ms | Allocations: 32913)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:44:54 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:44:54 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4323)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 5799)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:44:57 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:44:57 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4322)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 6078)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:44:57 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:44:57 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1576)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4039)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 5514)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:44:58 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:44:58 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.1ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1568)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4032)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.3ms | Allocations: 5796)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:44:59 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms | Allocations: 1677)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:44:59 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.4ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.6ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1265)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3714)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 0.8ms | Allocations: 5162)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:45:00 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.4ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered pets/index.html.erb within layouts/application (Duration: 38.8ms | Allocations: 12376)
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 14859)
+Completed 200 OK in 72ms (Views: 43.9ms | ActiveRecord: 10.9ms | Allocations: 18421)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:00 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.9ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2034)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4510)
+Completed 200 OK in 24ms (Views: 12.9ms | ActiveRecord: 0.8ms | Allocations: 6424)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:45:01 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:01 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4323)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 5813)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:14 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4301)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 5794)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:45:15 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:15 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1859)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4323)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 5799)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:45:32 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:32 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4315)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 6086)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:33 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1260)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3418)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 4882)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:45:49 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1956)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:49 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4301)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 6071)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:45:50 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:51 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1265)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3728)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 5487)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:45:51 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms | Allocations: 1651)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:51 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1260)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3418)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.5ms | Allocations: 4888)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:45:52 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (1.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.5ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 2876)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 5326)
+Completed 200 OK in 32ms (Views: 22.7ms | ActiveRecord: 2.8ms | Allocations: 6805)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:45:53 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 4301)
+Completed 200 OK in 36ms (Views: 18.3ms | ActiveRecord: 1.8ms | Allocations: 6408)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:45:55 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.4ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3102)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 5676)
+Completed 200 OK in 37ms (Views: 24.2ms | ActiveRecord: 2.6ms | Allocations: 7202)
+
+
+Started GET "/pets/1/edit" for 127.0.0.1 at 2024-01-30 21:45:55 +0100
+Processing by PetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:42:in `set_pet'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/edit.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.3ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:21
+  Rendered pets/_form.html.erb (Duration: 6.4ms | Allocations: 2947)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 58)
+  Rendered pets/edit.html.erb within layouts/application (Duration: 8.9ms | Allocations: 4321)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 6780)
+Completed 200 OK in 27ms (Views: 13.2ms | ActiveRecord: 1.6ms | Allocations: 9916)
+
+
+Started GET "/pets/1" for 127.0.0.1 at 2024-01-30 21:45:57 +0100
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10 AND `pets`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/pets_controller.rb:42:in `set_pet'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 398)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2576)
+Completed 200 OK in 24ms (Views: 8.1ms | ActiveRecord: 1.8ms | Allocations: 5679)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:01 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:01 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2576)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4750)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.8ms | Allocations: 6536)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:01 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:02 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2589)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4762)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 6248)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:41 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:41 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.4ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2294)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4467)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.9ms | Allocations: 5933)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:42 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:42 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 3181)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5645)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 1.3ms | Allocations: 7442)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:42 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:42 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.1ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2880)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 5053)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.8ms | Allocations: 6824)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:42 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:43 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:43 +0100
+  [1m[36mPet Load (1.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.3ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3795)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6035)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 2.1ms | Allocations: 7852)
+
+
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:43 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:43 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2569)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4749)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.7ms | Allocations: 6236)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:43 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:43 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2870)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 5342)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 1.1ms | Allocations: 6818)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:46:56 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:46:56 +0100
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 10[0m
+  ↳ app/views/pets/index.html.erb:19
+  [1m[36mSpecies Load (0.2ms)[0m  [1m[34mSELECT `species`.* FROM `species` WHERE `species`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/pets/index.html.erb:25
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 64)
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2293)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4466)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 5966)
+
+
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:48:26 +0100
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 42ms (ActiveRecord: 2.6ms | Allocations: 29610)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:48:26 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.1ms | Allocations: 2543)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.7ms | Allocations: 535)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 4402)
+  Rendered layout layouts/application.html.erb (Duration: 102.9ms | Allocations: 78770)
+Completed 200 OK in 110ms (Views: 105.5ms | ActiveRecord: 0.2ms | Allocations: 83604)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:48:28 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:48:28 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.3ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 4315)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 6104)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:48:28 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:48:28 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.6ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4323)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.3ms | Allocations: 5808)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:48:29 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:48:30 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1852)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4323)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 5791)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/logout.html.erb"], :force_reload=>false}
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:49:21 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:49:21 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.8ms | Allocations: 1811)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.7ms | Allocations: 521)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3448)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 23342)
+Completed 200 OK in 34ms (Views: 19.4ms | ActiveRecord: 3.5ms | Allocations: 32914)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:49:22 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:49:22 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1867)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4330)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 6094)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/sessions/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/logout.html.erb"], :force_reload=>false}
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:49:33 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:49:33 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.8ms | Allocations: 1809)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 1.3ms | Allocations: 516)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3162)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 23347)
+Completed 200 OK in 49ms (Views: 28.4ms | ActiveRecord: 4.0ms | Allocations: 32894)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/logout.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/destroy.html.erb"], :force_reload=>false}
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:50:13 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:50:13 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 1832)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.8ms | Allocations: 523)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3486)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 23689)
+Completed 200 OK in 32ms (Views: 20.4ms | ActiveRecord: 2.4ms | Allocations: 33239)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:50:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 2546)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.9ms | Allocations: 535)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.3ms | Allocations: 4474)
+  Rendered layout layouts/application.html.erb (Duration: 127.0ms | Allocations: 78923)
+Completed 200 OK in 201ms (Views: 131.5ms | ActiveRecord: 4.5ms | Allocations: 111810)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:50:37 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:50:37 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1571)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4042)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 5518)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2024-01-30 21:50:38 +0100
+  
+ActionController::RoutingError (No route matches [DELETE] "/logout"):
+  
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:50:38 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1867)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4330)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 5797)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/destroy.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/layouts/application.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:51:42 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 1811)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.6ms | Allocations: 516)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.0ms | Allocations: 3167)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 23344)
+Completed 200 OK in 30ms (Views: 17.0ms | ActiveRecord: 2.6ms | Allocations: 32642)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-30 21:51:44 +0100
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 1858)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:51:44 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 908)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3073)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4149)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-30 21:51:49 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 506)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3596)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 4507)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:51:49 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3157)
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 3979)
+
+
+Started GET "/pets" for 127.0.0.1 at 2024-01-30 21:51:51 +0100
+Processing by PetsController#index as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :only_signed_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 1079)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:51:51 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2813)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3657)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:51:52 +0100
+Processing by UsersController#edit as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :only_signed_in rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms | Allocations: 973)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:51:52 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2519)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3361)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-01-30 21:51:56 +0100
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/profile
+Completed 302 Found in 228ms (ActiveRecord: 1.1ms | Allocations: 2372)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:51:56 +0100
+Processing by UsersController#edit as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 708)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 59)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1310)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3754)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 5263)
+
+
