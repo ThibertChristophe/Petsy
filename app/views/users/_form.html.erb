@@ -1,6 +1,6 @@
-   <%= form_with model: user, url: url, new: new, html: {class: 'form-horizontal'} do |form| %>
+   <%= form_with model: user, url: url, html: {class: 'form-horizontal'} do |form| %>
 
-     <% if !new %>
+     <% if !user.new_record? %>
        <% if user.avatar %>
         <%= image_tag user.avatar_url %>
        <% end %>
@@ -28,7 +28,7 @@
         <% end %>
       </div>
 
-      <% if new %>
+      <% if user.new_record? %>
       <div class="form-group">
         <%= form.label :password, "Mot de passe", class: 'col-md-4 control-label' %>
           <%= form.password_field :password, class: 'form-control' %>
@@ -46,7 +46,7 @@
       </div>
     <% end %>
 
-    <% if !new %>
+    <% if !user.new_record? %>
       <div class="form-group">
         <%= form.label :lastname, "Nom", class: 'col-md-4 control-label' %>
           <%= form.text_field :lastname, class: 'form-control' %>

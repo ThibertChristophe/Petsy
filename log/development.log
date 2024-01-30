@@ -21241,3 +21241,114 @@ Processing by UsersController#edit as TURBO_STREAM
 Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 5263)
 
 
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/edit.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:54:33 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 2131)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2790)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3477)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.2ms | Allocations: 13042)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new' for an instance of #<Class:0x00007f63806d5f20>):
+    1:    <%= form_with model: user, url: url, new: new, html: {class: 'form-horizontal'} do |form| %>
+    2: 
+    3:      <% if !new %>
+    4:        <% if user.avatar %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:3
+app/views/users/edit.html.erb:1
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:54:42 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 2577)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2943)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3630)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.6ms | Allocations: 13182)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new' for an instance of #<Class:0x00007f6380c39a70>):
+    46:       </div>
+    47:     <% end %>
+    48: 
+    49:     <% if !new %>
+    50:       <div class="form-group">
+    51:         <%= form.label :lastname, "Nom", class: 'col-md-4 control-label' %>
+    52:           <%= form.text_field :lastname, class: 'form-control' %>
+  
+app/views/users/_form.html.erb:49
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:3
+app/views/users/edit.html.erb:1
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/_form.html.erb"], :force_reload=>false}
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:55:13 +0100
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.6ms | Allocations: 1808)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 1.8ms | Allocations: 521)
+  Rendered users/edit.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3162)
+  Rendered layout layouts/application.html.erb (Duration: 59.7ms | Allocations: 23365)
+Completed 200 OK in 81ms (Views: 61.4ms | ActiveRecord: 2.5ms | Allocations: 32639)
+
+
+Started GET "/logout" for 127.0.0.1 at 2024-01-30 21:55:16 +0100
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 10 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1773)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:55:16 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 801)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2969)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4029)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:55:18 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 2808)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 3637)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-30 21:55:19 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 506)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1135)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 3577)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 4493)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:55:20 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2813)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3642)
+
+
