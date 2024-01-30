@@ -19907,3 +19907,155 @@ Processing by PetsController#show as HTML
 Completed 200 OK in 32ms (Views: 4.8ms | ActiveRecord: 1.3ms | Allocations: 4503)
 
 
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:31:59 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.5ms | Allocations: 2268)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.7ms | Allocations: 541)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4343)
+  Rendered layout layouts/application.html.erb (Duration: 118.6ms | Allocations: 78189)
+Completed 200 OK in 189ms (Views: 124.5ms | ActiveRecord: 5.6ms | Allocations: 105691)
+
+
+Started GET "/profile" for 127.0.0.1 at 2024-01-30 21:32:04 +0100
+Processing by UsersController#edit as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :only_signed_in rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 0.0ms | Allocations: 2069)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:32:04 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 802)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 2966)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 4116)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:32:41 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1945)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2348)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.3ms | Allocations: 10600)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+
+<% if @user.errors.any? %>
+<div class="alert alert-danger">
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li class='text-danger'><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading h5">S'inscrire</div>
+  <div class="panel-body">
+    <%= render "form", user: @user, url: users_path, textbtn: "S'inscrire", new: true %>
+  </div>
+</div>
+<% end %>
+
+
+):
+1:    
+2:    
+3:    <% if @user.errors.any? %>
+4:    <div class="alert alert-danger">
+5:      <ul>
+6:        <% @user.errors.full_messages.each do |message| %>
+7:          <li class='text-danger'><%= message %></li>
+8:        <% end %>
+9:      </ul>
+10:    </div>
+11:    <% end %>
+12:    
+13:    <div class="panel panel-default">
+14:      <div class="panel-heading h5">S'inscrire</div>
+15:      <div class="panel-body">
+16:        <%= render "form", user: @user, url: users_path, textbtn: "S'inscrire", new: true %>
+17:      </div>
+18:    </div>
+19:    <% end %>
+  
+app/views/users/new.html.erb:22: syntax error, unexpected `end'
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/home/chris/Ruby/Petsy/app/views/users/new.html.erb"], :force_reload=>false}
+Started GET "/" for 127.0.0.1 at 2024-01-30 21:33:30 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 1581)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2304)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 22494)
+Completed 200 OK in 41ms (Views: 26.8ms | ActiveRecord: 2.5ms | Allocations: 30397)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:33:34 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1080)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3236)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 4383)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-30 21:33:35 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 506)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 611)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3067)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 3902)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:33:36 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2535)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 3349)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-30 21:33:37 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.7ms | Allocations: 506)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 3349)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 4180)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-01-30 21:33:38 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3144)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 3974)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-01-30 21:33:39 +0100
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.0ms | Allocations: 506)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 911)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3407)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4256)
+
+
