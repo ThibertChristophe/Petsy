@@ -106,6 +106,7 @@ GEM
       activemodel
     erubi (1.12.0)
     ffi (1.16.3)
+    flatpickr (2.6.3.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hotwire-livereload (1.3.1)
@@ -280,6 +281,7 @@ DEPENDENCIES
   capybara
   debug
   email_validator
+  flatpickr (~> 2.3, >= 2.3.5.0)
   hotwire-livereload
   importmap-rails
   jbuilder
