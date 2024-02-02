@@ -5,6 +5,9 @@ class Pet < ApplicationRecord
   validates :name, :gender, :birthday, presence: { message: 'obligatoire' }
   validates :gender, format: { with: /\A(M|F)\z/ }
   validate :birthday_not_future
+  validates :avatar_file, presence: true, on: :create
+
+  has_image :avatar
 
   def birthday_not_future
     return unless birthday.present? && birthday.future?

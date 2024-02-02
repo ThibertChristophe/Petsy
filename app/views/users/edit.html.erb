@@ -1,3 +1,4 @@
+<% content_for :tab, :profile, :flush => true %>
 <% content_for :content do %>
   <h1>Mon profil</h1>
   <%= render 'form', user: @user, url: profile_path %>

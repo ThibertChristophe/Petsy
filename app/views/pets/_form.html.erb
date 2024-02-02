@@ -9,6 +9,13 @@
       </div>
 
       <div class="form-group">
+        <%= form.label :avatar_file, "Avatar", class: 'col-md-4 control-label' %>
+          <%= form.file_field :avatar_file, class: 'form-control' %>
+        <% pet.errors.full_messages_for(:avatar_file).each do |message| %>
+          <div class='text-danger'><%= message %></div>
+        <% end %>
+      </div>
+      <div class="form-group">
         <%= form.label :gender, "Genre", class: 'col-md-4 control-label' %>
         <%= form.select :gender, {Male: :M, Femelle: :F},{}, class: 'form-control' %>
         <% pet.errors.full_messages_for(:gender).each do |message| %>

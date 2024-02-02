@@ -1,3 +1,4 @@
+<% content_for :tab, :pets, :flush => true %>
 <% content_for :content do %>
   <h1>Mes animaux</h1>
   <p class="text-right">
@@ -18,10 +19,10 @@
     <tbody>
       <% @pets.each do |pet| %>
         <tr>
-          <td></td>
+          <td><%= image_tag pet.avatar_url %></td>
           <td><%= pet.name %></td>
           <td><%= pet.gender %></td>
-          <td><%= pet.age %> ans</td>
+          <td><%= pet.age %> <%= 'an'.pluralize(pet.age) %></td>
           <td><%= pet.species.name %></td>
           <td><%= link_to 'Voir', pet_path(pet), class: 'btn btn-default'%>
         <%= link_to 'Modifier', edit_pet_path(pet), class: 'btn btn-primary'%>
