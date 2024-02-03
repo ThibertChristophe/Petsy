@@ -6,6 +6,7 @@
     <div class="list-group">
       <%= link_to 'Mon profil', profile_path, class: "list-group-item  #{'active' if yield(:tab)=='profile'}" %>
       <%= link_to 'Mes animaux', pets_path, class: "list-group-item #{'active' if yield(:tab)=='pets'}" %>
+      <%= link_to 'Mes articles', posts_path, class: "list-group-item #{'active' if yield(:tab)=='posts'}" %>
     </div>
   </div>
 </div>

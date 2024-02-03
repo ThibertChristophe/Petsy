@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   # attr_accessor :avatar_file
 
-  has_many :pets
+  has_many :pets, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   has_secure_password
   has_secure_token :confirmation_token

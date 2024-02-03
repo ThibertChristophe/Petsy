@@ -1,0 +1,18 @@
+<%% content_for :tab, :pets, :flush => true %>
+<%% content_for :content do %>
+
+
+<h1><%= human_name.pluralize %></h1>
+<%%= link_to "New <%= human_name.downcase %>", <%= new_helper(type: :path) %> %>
+
+<div id="<%= plural_table_name %>">
+  <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+    <%%= render <%= singular_table_name %> %>
+    <p>
+      <%%= link_to "Show this <%= human_name.downcase %>", <%= model_resource_name(singular_table_name) %> %>
+    </p>
+  <%% end %>
+</div>
+
+<%% end %>
+<%%= render template: 'layouts/profile' %>

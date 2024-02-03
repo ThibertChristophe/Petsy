@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   resources :pets
   # edition de profil
   get 'profile', to: 'users#edit', as: :profile

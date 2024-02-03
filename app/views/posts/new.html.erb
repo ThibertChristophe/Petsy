@@ -1,0 +1,14 @@
+<% content_for :content do %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <h2>Créer post</h2>
+  </div>
+  <div class="panel-body">
+    <%= render "form", post: @post %>
+  </div>
+</div>
+<% end %>
+
+<%= render template: 'layouts/profile' %>
+
