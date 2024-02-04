@@ -231,6 +231,7 @@ GEM
     rexml (3.2.6)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
+    select2-rails (4.0.13)
     selenium-webdriver (4.16.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -291,6 +292,7 @@ DEPENDENCIES
   rails (~> 7.1.2)
   rails_live_reload
   redis (>= 4.0.1)
+  select2-rails
   selenium-webdriver
   sprockets-rails
   stimulus-rails

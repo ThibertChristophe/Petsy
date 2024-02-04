@@ -2,6 +2,7 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 //= require flatpickr
+//= require select2
 
 document.addEventListener("DOMContentLoaded", function () {
   flatpickr(".form-datepickr", {
@@ -9,4 +10,5 @@ document.addEventListener("DOMContentLoaded", function () {
     altFormat: "j F Y",
     maxDate: new Date(),
   });
+  $("select[multiple]").select2();
 });
