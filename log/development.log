@@ -29340,3 +29340,921 @@ Processing by PetsController#index as HTML
 Completed 200 OK in 24ms (Views: 14.7ms | ActiveRecord: 1.7ms | Allocations: 8357)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-05 21:23:07 +0200
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'root'@'localhost'):
+  
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:46:in `rescue in new_client'
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:35:in `new_client'
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:159:in `connect'
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:167:in `reconnect'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:685:in `block in reconnect!'
+activesupport (7.1.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:684:in `reconnect!'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:788:in `verify!'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:795:in `connect!'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:1001:in `block in with_raw_connection'
+activesupport (7.1.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:1000:in `with_raw_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:1113:in `valid_raw_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:1100:in `any_raw_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:181:in `get_full_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:87:in `get_database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/schema_cache.rb:374:in `database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/schema_cache.rb:70:in `database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/schema_cache.rb:200:in `database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:871:in `database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:657:in `check_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:675:in `new_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:720:in `checkout_new_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:699:in `try_to_checkout_new_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:657:in `acquire_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `connection'
+activerecord (7.1.2) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.2) lib/active_record/migration.rb:773:in `block in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `each'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:751:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:19:in `call!'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:9:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-05-05 21:25:48 +0200
+  
+ActiveRecord::ConnectionNotEstablished (Access denied for user 'root'@'localhost'):
+  
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:46:in `rescue in new_client'
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:35:in `new_client'
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:159:in `connect'
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:167:in `reconnect'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:685:in `block in reconnect!'
+activesupport (7.1.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:684:in `reconnect!'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:788:in `verify!'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:795:in `connect!'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:1001:in `block in with_raw_connection'
+activesupport (7.1.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:1000:in `with_raw_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:1113:in `valid_raw_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:1100:in `any_raw_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/mysql2_adapter.rb:181:in `get_full_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:87:in `get_database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/schema_cache.rb:374:in `database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/schema_cache.rb:70:in `database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/schema_cache.rb:200:in `database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_adapter.rb:871:in `database_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract_mysql_adapter.rb:657:in `check_version'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:675:in `new_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:720:in `checkout_new_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:699:in `try_to_checkout_new_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:657:in `acquire_connection'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:355:in `checkout'
+activerecord (7.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `connection'
+activerecord (7.1.2) lib/active_record/migration/pending_migration_connection.rb:8:in `establish_temporary_connection'
+activerecord (7.1.2) lib/active_record/migration.rb:773:in `block in pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `each'
+activerecord (7.1.2) lib/active_record/migration.rb:772:in `pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:751:in `check_pending_migrations'
+activerecord (7.1.2) lib/active_record/migration.rb:643:in `block (2 levels) in call'
+activesupport (7.1.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.2) lib/active_record/migration.rb:648:in `block in call'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `synchronize'
+activerecord (7.1.2) lib/active_record/migration.rb:640:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:19:in `call!'
+rails_live_reload (0.3.5) lib/rails_live_reload/middleware/base.rb:9:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.2) lib/rails/engine.rb:529:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE DATABASE `petsy` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE DATABASE `petsy_test` DEFAULT CHARACTER SET `utf8mb4`[0m
+  [1m[35m (51.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[35m (45.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('2660724183889824570', 0)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' ORDER BY `ar_internal_metadata`.`key` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Create (6.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2024-05-05 19:39:58.624831', '2024-05-05 19:39:58.624833')[0m
+Migrating to CreateUsers (20240113221553)
+  [1m[35m (49.2ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `username` varchar(255), `email` varchar(255), `confirm` tinyint(1) DEFAULT FALSE, `confirmation_token` varchar(255), `password_digest` varchar(255), `firstname` varchar(255), `lastname` varchar(255), `avatar` tinyint(1) DEFAULT FALSE, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240113221553')[0m
+Migrating to AddRecoverPasswordToUsers (20240123212423)
+  [1m[35m (46.2ms)[0m  [1m[35mALTER TABLE `users` ADD `recover_password` varchar(255)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (7.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240123212423')[0m
+Migrating to CreateSpecies (20240126214623)
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE TABLE `species` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `slug` varchar(255), `pets_count` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240126214623')[0m
+Migrating to CreatePets (20240126214721)
+  [1m[35m (73.2ms)[0m  [1m[35mCREATE TABLE `pets` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `gender` varchar(255), `birthday` date, `user_id` bigint, `species_id` bigint, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_pets_on_user_id` (`user_id`), INDEX `index_pets_on_species_id` (`species_id`), CONSTRAINT `fk_rails_0fa4bae6b1`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_d63356c604`
+FOREIGN KEY (`species_id`)
+  REFERENCES `species` (`id`)
+)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240126214721')[0m
+Migrating to AddAvatarToPets (20240202221103)
+  [1m[35m (42.7ms)[0m  [1m[35mALTER TABLE `pets` ADD `avatar` tinyint(1)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (7.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240202221103')[0m
+Migrating to CreatePosts (20240203195452)
+  [1m[35m (60.7ms)[0m  [1m[35mCREATE TABLE `posts` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `content` text, `user_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, INDEX `index_posts_on_user_id` (`user_id`), CONSTRAINT `fk_rails_5b5ddfd518`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (7.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240203195452')[0m
+Migrating to CreateJoinTablePetPost (20240204210120)
+  [1m[35m (54.9ms)[0m  [1m[35mCREATE TABLE `pets_posts` (`pet_id` bigint NOT NULL, `post_id` bigint NOT NULL, INDEX `index_pets_posts_on_pet_id_and_post_id` (`pet_id`, `post_id`), INDEX `index_pets_posts_on_post_id_and_pet_id` (`post_id`, `pet_id`))[0m
+  [1m[36mActiveRecord::SchemaMigration Create (7.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20240204210120')[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('2660724183889824570')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-05-05 21:40:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.7ms | Allocations: 12079)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 13093)
+  Rendered layout layouts/application.html.erb (Duration: 478.5ms | Allocations: 332729)
+Completed 200 OK in 555ms (Views: 481.9ms | ActiveRecord: 2.7ms | Allocations: 396065)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-05 21:40:07 +0200
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.0ms | Allocations: 482)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 893)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4131)
+Completed 200 OK in 18ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 22127)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:40:09 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1073)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 4007)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 5429)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-05-05 21:40:10 +0200
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 482)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 891)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 4129)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 4946)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:40:11 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 4767)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 5587)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-05-05 21:40:14 +0200
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 482)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 891)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4441)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 5246)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:40:16 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3593)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 4401)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/media/chris/5a7eb0b8-a577-4bbd-8acc-f21ac2b1ec6d/Rails/Petsy/app/views/sessions/new.html.erb"], :force_reload=>false}
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:42:29 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1922)
+  Rendered layout layouts/application.html.erb (Duration: 156.3ms | Allocations: 91657)
+Completed 200 OK in 218ms (Views: 159.2ms | ActiveRecord: 3.1ms | Allocations: 120772)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/media/chris/5a7eb0b8-a577-4bbd-8acc-f21ac2b1ec6d/Rails/Petsy/app/views/sessions/new.html.erb"], :force_reload=>false}
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:44:03 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1142)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 26226)
+Completed 200 OK in 35ms (Views: 19.9ms | ActiveRecord: 2.9ms | Allocations: 34504)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:44:07 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 3609)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 4428)
+
+
+[ActionCable] Broadcasting to hotwire-reload: {:changed=>["/media/chris/5a7eb0b8-a577-4bbd-8acc-f21ac2b1ec6d/Rails/Petsy/app/views/sessions/new.html.erb"], :force_reload=>false}
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:44:16 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1145)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 26208)
+Completed 200 OK in 40ms (Views: 25.9ms | ActiveRecord: 2.5ms | Allocations: 34463)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-05-05 21:51:20 +0200
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ete", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'ete' OR `users`.`email` = 'ete') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 29ms (ActiveRecord: 0.6ms | Allocations: 28442)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:51:20 +0200
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3339)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 4224)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-05-05 21:51:23 +0200
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewqe", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'ewqe' OR `users`.`email` = 'ewqe') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms | Allocations: 1299)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:51:23 +0200
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3282)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4099)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-05-05 21:51:27 +0200
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewew", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'ewew' OR `users`.`email` = 'ewew') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1910)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:51:27 +0200
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3282)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 4106)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-05-05 21:51:29 +0200
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = '' OR `users`.`email` = '') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 17ms (ActiveRecord: 0.8ms | Allocations: 1374)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:51:29 +0200
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3339)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4158)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-05-05 21:51:30 +0200
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = '' OR `users`.`email` = '') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms | Allocations: 1589)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:51:30 +0200
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3292)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 4097)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-05 21:51:31 +0200
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.9ms | Allocations: 1563)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2015)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 5255)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 6396)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:51:32 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 3592)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 4391)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-05-05 21:51:32 +0200
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.9ms | Allocations: 482)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 891)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4125)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4959)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:51:34 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3758)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4595)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-05-05 21:51:36 +0200
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ewe", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'ewe' OR `users`.`email` = 'ewe') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms | Allocations: 1274)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-05-05 21:51:36 +0200
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3619)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4448)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-05-05 21:51:37 +0200
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | Allocations: 482)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 891)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 4126)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 4949)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-05-05 21:55:07 +0200
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'inscrire"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@test.com' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO `users` (`username`, `email`, `confirm`, `confirmation_token`, `password_digest`, `firstname`, `lastname`, `avatar`, `created_at`, `updated_at`, `recover_password`) VALUES ('test', 'test@test.com', FALSE, 'HBRQi1YmUenqjiDcrAedBUFp', '$2a$12$akykPe/TsSKlFDR98F/pgeiOWi/RggFieYQ.jkpjNb6Fn3l2RIIW.', NULL, NULL, FALSE, '2024-05-05 19:55:08.071357', '2024-05-05 19:55:08.071357', NULL)[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  Rendering layout layouts/mailer.text.erb
+  Rendering user_mailer/confirm.text.erb within layouts/mailer
+  Rendered user_mailer/confirm.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 333)
+  Rendered layout layouts/mailer.text.erb (Duration: 2.0ms | Allocations: 1158)
+UserMailer#confirm: processed outbound mail in 20.8ms
+Delivered mail 6637e41c37ff2_9d8f46f0194a8@GetABrainPlz.mail (238.0ms)
+Date: Sun, 05 May 2024 21:55:08 +0200
+From: from@example.com
+To: test@test.com
+Message-ID: <6637e41c37ff2_9d8f46f0194a8@GetABrainPlz.mail>
+Subject: Confirmation inscription
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Bonjour
+
+Merci test pour votre inscription.
+
+Veuillez cliquer sur le lien pour valider votre compte
+
+http://localhost:3000/users/1/confirm?token=HBRQi1YmUenqjiDcrAedBUFp
+
+Merci
+
+
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 608ms (ActiveRecord: 13.6ms | Allocations: 178923)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-05 21:55:08 +0200
+Processing by UsersController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 484)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 937)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4237)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 5153)
+
+
+Started GET "/users/1/confirm?token=[FILTERED]" for ::1 at 2024-05-05 21:55:24 +0200
+Processing by UsersController#confirm as HTML
+  Parameters: {"token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:68:in `set_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:36:in `confirm'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`confirm` = TRUE, `users`.`confirmation_token` = NULL, `users`.`updated_at` = '2024-05-05 19:55:24.085406' WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/users_controller.rb:36:in `confirm'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:36:in `confirm'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 18ms (ActiveRecord: 6.8ms | Allocations: 5342)
+
+
+Started GET "/profile" for ::1 at 2024-05-05 21:55:24 +0200
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.9ms | Allocations: 2940)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 1.7ms | Allocations: 590)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.6ms | Allocations: 4937)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 7891)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 0.3ms | Allocations: 9861)
+
+
+Started PATCH "/profile" for ::1 at 2024-05-05 21:55:31 +0200
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "email"=>"test@test.com", "lastname"=>"test", "firstname"=>"test"}, "commit"=>"Modifier"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`username` = 'test' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = 'test@test.com' AND `users`.`id` != 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `users`.`firstname` = 'test', `users`.`lastname` = 'test', `users`.`updated_at` = '2024-05-05 19:55:31.397970' WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:55:in `update'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 31ms (ActiveRecord: 7.9ms | Allocations: 6559)
+
+
+Started GET "/profile" for ::1 at 2024-05-05 21:55:31 +0200
+Processing by UsersController#edit as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.3ms | Allocations: 615)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1218)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4203)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 5714)
+
+
+Started GET "/pets" for ::1 at 2024-05-05 21:55:32 +0200
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 1[0m
+  ↳ app/views/pets/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 91)
+  Rendered pets/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 9049)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 12052)
+Completed 200 OK in 64ms (Views: 21.4ms | ActiveRecord: 4.1ms | Allocations: 41569)
+
+
+Started GET "/posts" for ::1 at 2024-05-05 21:55:33 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/views/posts/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.4ms | Allocations: 91)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1689)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 4692)
+Completed 200 OK in 55ms (Views: 14.5ms | ActiveRecord: 6.1ms | Allocations: 12531)
+
+
+Started GET "/pets" for ::1 at 2024-05-05 21:55:34 +0200
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 1[0m
+  ↳ app/views/pets/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.4ms | Allocations: 96)
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2010)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 5281)
+Completed 200 OK in 27ms (Views: 16.3ms | ActiveRecord: 2.4ms | Allocations: 7463)
+
+
+Started GET "/profile" for ::1 at 2024-05-05 21:55:35 +0200
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 615)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.4ms | Allocations: 92)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1872)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 5491)
+Completed 200 OK in 34ms (Views: 14.3ms | ActiveRecord: 0.9ms | Allocations: 7322)
+
+
+Started GET "/logout" for ::1 at 2024-05-05 21:55:36 +0200
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 10ms (ActiveRecord: 0.9ms | Allocations: 1702)
+
+
+Started GET "/login" for ::1 at 2024-05-05 21:55:36 +0200
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 357)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3603)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 4426)
+
+
+Started POST "/sessions" for ::1 at 2024-05-05 21:55:38 +0200
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 229ms (ActiveRecord: 0.8ms | Allocations: 1996)
+
+
+Started GET "/login" for ::1 at 2024-05-05 21:55:38 +0200
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3588)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 4410)
+
+
+Started POST "/sessions" for ::1 at 2024-05-05 21:55:42 +0200
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"test", "password"=>"[FILTERED]"}, "commit"=>"Se connecter"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`confirm` = TRUE AND (`users`.`username` = 'test' OR `users`.`email` = 'test') ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/sessions_controller.rb:19:in `create'
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 219ms (ActiveRecord: 0.9ms | Allocations: 1365)
+
+
+Started GET "/profile" for ::1 at 2024-05-05 21:55:42 +0200
+Processing by UsersController#edit as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.8ms | Allocations: 615)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.1ms | Allocations: 92)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1533)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4821)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 6318)
+
+
+Started GET "/" for ::1 at 2024-05-05 21:55:46 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms | Allocations: 2027)
+
+
+Started GET "/profile" for ::1 at 2024-05-05 21:55:46 +0200
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 615)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 92)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1217)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4154)
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.5ms | Allocations: 5647)
+
+
+Started GET "/pets" for ::1 at 2024-05-05 22:00:00 +0200
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 1[0m
+  ↳ app/views/pets/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 96)
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1382)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4310)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 1.5ms | Allocations: 5822)
+
+
+Started GET "/posts" for ::1 at 2024-05-05 22:00:01 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/views/posts/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 96)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1312)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4296)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.5ms | Allocations: 5914)
+
+
+Started GET "/pets" for ::1 at 2024-05-05 22:00:02 +0200
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 1[0m
+  ↳ app/views/pets/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.4ms | Allocations: 96)
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1945)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 4981)
+Completed 200 OK in 29ms (Views: 15.9ms | ActiveRecord: 2.4ms | Allocations: 6861)
+
+
+Started GET "/pets/new" for ::1 at 2024-05-05 22:00:02 +0200
+Processing by PetsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.3ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:28
+  Rendered pets/_form.html.erb (Duration: 15.6ms | Allocations: 10776)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered pets/new.html.erb within layouts/application (Duration: 18.4ms | Allocations: 12521)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 15813)
+Completed 200 OK in 69ms (Views: 21.3ms | ActiveRecord: 2.1ms | Allocations: 44385)
+
+
+Started POST "/pets" for ::1 at 2024-05-05 22:00:18 +0200
+Processing by PetsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "pet"=>{"name"=>"Animal 1", "gender"=>"M", "birthday"=>""}, "commit"=>"Créer"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pets_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/pets_controller.rb:15:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/new.html.erb within layouts/application
+  [1m[36mSpecies Pluck (0.5ms)[0m  [1m[34mSELECT `species`.`name`, `species`.`id` FROM `species`[0m
+  ↳ app/views/pets/_form.html.erb:28
+  Rendered pets/_form.html.erb (Duration: 5.0ms | Allocations: 2934)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 92)
+  Rendered pets/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4132)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 7359)
+Completed 422 Unprocessable Entity in 27ms (Views: 12.2ms | ActiveRecord: 5.3ms | Allocations: 13558)
+
+
+Started GET "/pets" for ::1 at 2024-05-05 22:00:22 +0200
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 1[0m
+  ↳ app/views/pets/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.7ms | Allocations: 96)
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1382)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 4309)
+Completed 200 OK in 25ms (Views: 17.3ms | ActiveRecord: 1.5ms | Allocations: 5830)
+
+
+Started GET "/profile" for ::1 at 2024-05-05 22:00:23 +0200
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 615)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.6ms | Allocations: 92)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1837)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 5125)
+Completed 200 OK in 36ms (Views: 29.4ms | ActiveRecord: 0.9ms | Allocations: 6611)
+
+
+Started GET "/pets" for ::1 at 2024-05-05 22:00:24 +0200
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 1[0m
+  ↳ app/views/pets/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 96)
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1797)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5344)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.6ms | Allocations: 7172)
+
+
+Started GET "/posts" for ::1 at 2024-05-05 22:00:25 +0200
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`user_id` = 1[0m
+  ↳ app/views/posts/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.6ms | Allocations: 96)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1313)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 4240)
+Completed 200 OK in 28ms (Views: 19.1ms | ActiveRecord: 1.5ms | Allocations: 5859)
+
+
+Started GET "/posts/new" for ::1 at 2024-05-05 22:00:26 +0200
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mPet Pluck (0.3ms)[0m  [1m[34mSELECT `pets`.`name`, `pets`.`id` FROM `pets` WHERE `pets`.`user_id` = 1[0m
+  ↳ app/views/posts/_form.html.erb:18
+  Rendered posts/_form.html.erb (Duration: 19.0ms | Allocations: 13246)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered posts/new.html.erb within layouts/application (Duration: 21.3ms | Allocations: 15020)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 18308)
+Completed 200 OK in 43ms (Views: 24.5ms | ActiveRecord: 2.5ms | Allocations: 23979)
+
+
+Started GET "/pets" for ::1 at 2024-05-05 22:00:31 +0200
+Processing by PetsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT `pets`.* FROM `pets` WHERE `pets`.`user_id` = 1[0m
+  ↳ app/views/pets/index.html.erb:20
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.5ms | Allocations: 96)
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2009)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 5659)
+Completed 200 OK in 25ms (Views: 17.0ms | ActiveRecord: 1.5ms | Allocations: 7183)
+
+
+Started GET "/" for ::1 at 2024-05-05 22:00:34 +0200
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+Redirected to http://localhost:3000/profile
+Filter chain halted as :only_signed_out rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms | Allocations: 1682)
+
+
+Started GET "/profile" for ::1 at 2024-05-05 22:00:34 +0200
+Processing by UsersController#edit as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/application_controller.rb:33:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 616)
+  Rendering layouts/profile.html.erb
+  Rendered layouts/profile.html.erb (Duration: 0.3ms | Allocations: 92)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1218)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4144)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 5660)
+
+
